@@ -296,30 +296,46 @@ else:
     print(f"Saved: {os.path.join(BASE, 'Supplementary_Materials_v8.docx')}")
 
 # Generate Cover Letter v8
-cover_content = """Dear Editor,
+cover_content = """Date: August 7, 2026
 
-We are pleased to submit our manuscript entitled "Diastolic Shock Index as an Independent Predictor of In-Hospital Mortality in Critically Ill Patients with Acute Abdomen: A Retrospective Cohort Study with External Validation" for consideration as a Research Article in Annals of Intensive Care.
+To: The Editor-in-Chief, Annals of Intensive Care
 
-This study represents the first systematic evaluation of shock index-derived parameters in acute abdomen ICU patients, with SOFA adjustment, component decomposition analysis, bootstrap validation, multiple imputation (IterativeImputer + MICE with Rubin's rules), 14 sensitivity analyses mapped to specific bias sources, competing risk framework, and external validation across 208 hospitals via eICU-CRD. Causal inference is strengthened by a pre-specified DAG framework and E-value sensitivity analysis for unmeasured confounding.
+Re: Submission of original research article — "Diastolic Shock Index as an Independent Predictor of In-Hospital Mortality in Critically Ill Patients with Acute Abdomen: A Retrospective Cohort Study with External Validation"
 
-Our key finding is that diastolic shock index (DSI=HR/DBP) is an independent predictor of in-hospital mortality (OR=2.18, 95% CI 1.79-2.65, P=7.59x10^-15) after adjusting for SOFA and established ICU covariates, with E-value=3.78 for the point estimate and 2.98 for the CI lower bound, indicating substantial robustness to unmeasured confounding. Component decomposition analysis—following the methodology of Ospina-Tascon et al. (Ann Intensive Care 2020)—demonstrates that isolated HR (AUC=0.571) and DBP (AUC=0.597) are poor predictors, while DSI (AUC=0.644) significantly outperforms both (DeLong P<0.001, remained significant after Benjamini-Hochberg FDR correction). Within matched DBP or HR quintiles, DSI tertile consistently stratified mortality, confirming that the ratio captures prognostic information unavailable from either component alone. A DAG formalizes our causal inference strategy, and nomograms/clinical impact curves facilitate bedside implementation.
+Dear Editor,
 
-We acknowledge that the incremental AUC (DeltaAUC=0.005) is below conventional clinical relevance thresholds (>=0.02), and categorical NRI crosses zero. We therefore position DSI not as a replacement for SOFA, but as a complementary, zero-cost bedside tool providing immediate risk stratification when laboratory data are pending. The 36% exclusion due to missing lactate/WBC is addressed through DAG-based causal reasoning (collider stratification bias), MI on the full eligible cohort (N=8,933, DSI OR=2.65), and E-value analysis.
+We are pleased to submit our original research article entitled "Diastolic Shock Index as an Independent Predictor of In-Hospital Mortality in Critically Ill Patients with Acute Abdomen: A Retrospective Cohort Study with External Validation" for consideration for publication in Annals of Intensive Care.
 
-The DSI quartile mortality gradient was dramatic (Q1=12.1% to Q4=32.8%, 2.7-fold) and was closely replicated in eICU-CRD (12.0% to 33.5%, 2.8-fold). External validation preserved discrimination (AUC=0.792), though we transparently report that calibration required local recalibration (intercept shift -3.935).
+This retrospective cohort study utilized MIMIC-IV v3.1 (546,028 admissions, 2008-2022) to evaluate DSI (HR/DBP) as an independent, zero-cost bedside predictor of in-hospital mortality in critically ill patients with acute abdomen, with external validation in eICU-CRD. Among 5,728 complete-case ICU stays (in-hospital mortality 19.9%), DSI maintained independent prognostic value (OR=2.18, 95% CI 1.79-2.65, P=7.59x10^-15) after SOFA adjustment. The primary model excluded surgery to avoid survivorship bias (only 5.1% had surgery <=24h). Adding DSI yielded AUC=0.790 vs baseline 0.785 (DeltaAUC=0.005, DeLong P=0.012). We transparently acknowledge that DeltaAUC is below clinical relevance thresholds (>=0.02 per Cook 2007, Vickers et al. 2011), and categorical NRI crosses zero (0.008, 95% CI -0.009 to 0.044). DSI's clinical value lies in its independent association (OR=2.18), dramatic quartile mortality gradient (12.1%->32.8%, 2.7-fold), and zero-cost bedside availability complementary to SOFA when laboratory data are pending. Component decomposition confirmed that DSI captures prognostic information unavailable from isolated HR (AUC=0.571) or DBP (AUC=0.597).
 
-Our study extends the work of Ospina-Tascon et al. from septic shock to acute abdomen—a population with distinct pathophysiological mechanisms including splanchnic vascular compromise, perforation-induced peritonitis, and mesenteric ischemia. We note that Professor Teboul, Editor-in-Chief of Annals of Intensive Care, is a co-author of the original DSI paper, and we believe our work represents a meaningful extension of that foundational research.
+Robustness was confirmed via an a priori DAG causal framework, E-value analysis (point estimate 3.78; 2.98 for CI lower bound, indicating an unmeasured confounder would need RR >3.8 to explain the association), Benjamini-Hochberg FDR correction for multiplicity, multiple imputation (N=8,933, AUC=0.822), MICE comparison (DSI OR consistent: IterativeImputer 2.65 vs MICE 2.63), and 14 sensitivity analyses addressing nine bias categories. External validation across 208 hospitals preserved discrimination (AUC=0.792) and replicated the quartile gradient (12.0%->33.5%), though calibration required local recalibration (intercept shift -3.935; slope 0.952). Analysis code is publicly available at https://github.com/wudengke2010/dsi-acute-abdomen-mimic-iv.
 
-The manuscript complies with AIC formatting requirements (~4,000 words, 5 display items, 40 references, structured abstract <=350 words) and is reported per STROBE and TRIPOD+AI guidelines. Analysis code is publicly available at https://github.com/wudengke2010/DSI-acute-abdomen. AI was used only for language polishing; all data extraction, statistical analyses, and scientific interpretation were performed independently by the authors.
+Why This Study Fits Annals of Intensive Care:
 
-We confirm that this manuscript has not been published and is not under consideration elsewhere. The authors declare no conflicts of interest.
+1. Novelty: First systematic evaluation of DSI — originally described by Ospina-Tascon et al. in Annals of Intensive Care (2020) for septic shock — in acute abdomen ICU patients. Component decomposition extends the principle that DSI outperforms isolated HR/DBP to a new population.
+
+2. Clinical relevance: Acute abdomen requiring ICU admission carries 15-20% mortality. A zero-cost bedside tool providing immediate risk stratification before laboratory results benefits intensivists directly.
+
+3. Methodological rigor: STROBE and TRIPOD+AI-compliant; DAG-based causal framework; transparent disclosure of DeltaAUC below clinical thresholds; Benjamini-Hochberg FDR correction; two multiple imputation strategies; 14 sensitivity analyses across nine bias categories; external validation with both un-recalibrated and recalibrated metrics.
+
+We note that Professor Jean-Louis Teboul, Editor-in-Chief of Annals of Intensive Care, is a co-author of the original DSI paper (Ospina-Tascon et al. 2020). We believe our work represents a meaningful extension of that foundational research to a previously unexamined population.
+
+This manuscript has not been published previously and is not under consideration elsewhere. All authors have approved the final manuscript. The study uses publicly available, de-identified data. The authors declare no conflicts of interest. This work was supported by the National Health Commission (GWJJMB202510024181), Changsha Science and Technology Bureau (kq2014242), and Hunan Provincial Natural Science Foundation (2021JJ30959). Funders had no role in study design, analysis, or publication.
 
 Sincerely,
+
 Dengke Wu, MD
-Department of Emergency Medicine
-Second Xiangya Hospital, Central South University
+Department of Emergency Medicine, and Emergency Medicine and Difficult Diseases Institute
+The Second Xiangya Hospital of Central South University
 Changsha 410011, Hunan, China
-wudk2010@csu.edu.cn
+Email: wudk2010@csu.edu.cn
+ORCID: 0009-0008-1363-9621
+
+Jiqiang Liu
+Department of Emergency Medicine
+The Second Xiangya Hospital of Central South University
+Changsha 410011, Hunan, China
+ORCID: 0009-0000-9884-3089
 """
 
 cover_doc = Document()
