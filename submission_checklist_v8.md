@@ -1,8 +1,8 @@
 # AIC投稿完整引导 — Annals of Intensive Care (v8版本)
 
 **投稿系统:** https://www.editorialmanager.com/aicoj/default.aspx  
-**日期:** 2026-07-21  
-**稿件版本:** v8 (含DOI+Highlights+3处参考文献修正)
+**日期:** 2026-08-07  
+**稿件版本:** v8-final (含DOI+Highlights+ORCID+DAG+E-value+B-H FDR+MICE+GitHub)
 
 ---
 
@@ -10,9 +10,9 @@
 
 | 项目 | 要求 | v8状态 | 实际值 |
 |---|---|---|---|
-| 正文词数 | ≤4,000 | ✅ | 3,971 |
-| 摘要词数 | ≤350, 结构化(Background/Methods/Results/Conclusions) | ✅ | 344 |
-| 参考文献 | ≤40, Vancouver编号[1]格式 | ✅ | 37篇(含DOI) |
+| 正文词数 | ≤4,000 | ✅ | 3,787 |
+| 摘要词数 | ≤350, 结构化(Background/Methods/Results/Conclusions) | ✅ | 349 |
+| 参考文献 | ≤40, Vancouver编号[1]格式 | ✅ | 40篇(全部DOI) |
 | 展示项 | ≤5 (tables+figures合计) | ✅ | 2 Tables + 3 Figures |
 | 关键词 | 3-5 | ✅ | 5 |
 | Highlights | 3-5条, 每条≤85字符(鼓励提交) | ✅ | 5条 |
@@ -154,14 +154,16 @@ Authors declare no competing interests.
 | Extended+DSI AUC | 0.790 |
 | ΔAUC | 0.005 (DeLong P=0.012) |
 | DSI OR | 2.18 (1.79-2.65), P=7.59×10⁻¹⁵ |
+| E-value (点估计/CI下界) | 3.78 / 2.98 |
 | SOFA OR | 1.16 (1.13-1.19), P<10⁻³⁶ |
 | VIF最大值 | SOFA=2.42 (全部<3.0) |
 | Bootstrap optimism | 0.002, corrected AUC=0.788 |
-| 多重插补AUC | 0.822 (N=8,933) |
+| 多重插补AUC (MICE) | 0.822 (IterativeImputer) / 2.63 (MICE Rubin's) |
 | eICU外部验证AUC | 0.792, ΔAUC=0.0074 (DeLong P=0.003) |
 | eICU recalibration intercept | −3.935, slope=0.952 |
 | DSI quartile gradient | 12.1%→32.8% (2.7-fold) |
 | Post-ICU hospital deaths | 383 (33.6% of 1,141) |
+| 敏感性分析 | 14 scenarios, 9 bias categories |
 
 ---
 
@@ -169,29 +171,34 @@ Authors declare no competing interests.
 
 | 检查项 | 状态 | 备注 |
 |---|---|---|
-| v8 MD论文完整(含DOI+Highlights+3处ref修正) | ✅ | SCI_paper_v8.md |
-| v8 DOCX已重新生成 | ✅ | 54KB |
-| Cover Letter DOCX已生成 | ✅ | 39KB |
-| Supplementary DOCX已生成 | ✅ | 41KB |
+| v8 MD论文完整 | ✅ | DAG+E-value+B-H+MICE+GitHub+ORCID |
+| v8 DOCX已生成 | ✅ | 55KB |
+| Cover Letter DOCX已生成 | ✅ | 含ORCID/基金/GitHub/E-value |
+| Supplementary DOCX已生成 | ✅ | Table S1-S13 + Fig S1-S11 |
 | 主图3张PDF+PNG在figures_v7/ | ✅ | Fig1/2/3 |
-| 补充图10张在figures_v7/ | ✅ | FigS1-S10 |
-| Highlights ≤85 chars each | ✅ | 5条(67/60/64/72/73 chars) |
-| 参考文献37篇≤40 | ✅ | 含DOI |
-| 3处ref错误已修正 | ✅ | [12]标题+编号/[22]期刊+卷页/[25]期刊+年份 |
+| 补充图11张在figures_v7/ | ✅ | FigS1-S11 (含DAG) |
+| Highlights ≤85 chars each | ✅ | 5条(80/67/71/60/71 chars) |
+| 参考文献40篇≤40 | ✅ | 全部DOI |
 | DOCX双倍行距+行号+TNR+A4+1inch margins | ✅ | 已验证 |
-| Abstract 344词≤350 | ✅ | |
-| Main text ≤4,000词 | ✅ | DOCX 3,971词 |
+| Abstract 349词≤350 | ✅ | |
+| Main text 3,787词≤4,000 | ✅ | |
 | Keywords 5个(3-5范围) | ✅ | |
 | Display items ≤5 | ✅ | 2 Tables + 3 Figures |
-| AI声明在Methods部分 | ✅ | |
-| STROBE声明 | ✅ | |
+| AI声明在Manuscript末尾 | ✅ | |
+| STROBE+TRIPOD+AI声明 | ✅ | |
 | Categorical NRI跨零已披露 | ✅ | 0.008 (CI: -0.009 to 0.044) |
 | ΔAUC低于阈值已承认 | ✅ | Cook[24]+Vickers[25] |
 | Surgery存活者偏倚已披露 | ✅ | 主模型不含surgery |
 | eICU SOFA异质性已披露 | ✅ | APS-based vs MIMIC-IV |
 | Recalibration需求已披露 | ✅ | intercept −3.935 |
 | CC选择偏倚已披露+MI补充 | ✅ | mortality 19.9% vs 8.0% excluded |
-| Cover Letter含关键信息 | ✅ | 37 refs, 14 analyses, Zhang/Jeon, nomogram |
+| DAG因果框架 | ✅ | Fig S11 + E-value Table S13 |
+| B-H FDR多重比较校正 | ✅ | 所有DeLong均保持显著 |
+| MICE第二插补策略 | ✅ | OR=2.63 vs IterativeImputer 2.65 |
+| GitHub代码公开 | ✅ | dsi-acute-abdomen-mimic-iv |
+| ORCID作者ID | ✅ | Liu: 0009-0000-9884-3089; Wu: 0009-0008-1363-9621 |
+| Cover Letter含完整信息 | ✅ | 标题/DAG/E-value/GitHub/ORCID/基金 |
+| 预草拟审稿回复 | ✅ | pre_draft_reviewer_responses.md (15条) |
 
 ---
 
