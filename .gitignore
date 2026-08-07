@@ -1,0 +1,33 @@
+# Data files (large, contain sensitive MIMIC data)
+*.csv
+*.csv.gz
+*.json
+*.xlsx
+
+# Generated figures
+*.png
+*.pdf
+*.svg
+*.eps
+
+# Generated DOCX
+*.docx
+
+# Figure directories
+figures/
+figures_corrected/
+figures_publication/
+figures_sci/
+figures_v5/
+figures_v7/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.ipynb_checkpoints/
+
+# Reference papers (copyrighted)
+ref_papers/
+

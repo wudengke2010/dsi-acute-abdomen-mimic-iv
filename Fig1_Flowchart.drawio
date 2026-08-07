@@ -1,0 +1,99 @@
+<mxfile host="app.diagrams.net" modified="2026-07-11T12:00:00.000Z" agent="SCI Paper" version="24.0.0" type="device">
+  <diagram name="Patient Selection Flowchart" id="flowchart">
+    <mxGraphModel dx="1422" dy="757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ========== MAIN BOXES (vertical flow) ========== -->
+
+        <!-- Box 1: MIMIC-IV Database -->
+        <mxCell id="box1" value="&lt;b&gt;MIMIC-IV v3.1 Database&lt;/b&gt;&lt;br&gt;N = 546,028 hospital admissions&lt;br&gt;(2008&amp;#8211;2022)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;fontSize=11;fontFamily=Helvetica;fontStyle=1;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="340" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Box 2: Acute abdomen ICD codes -->
+        <mxCell id="box2" value="Acute abdomen ICD codes&lt;br&gt;(K35&amp;#8211;K38, K80&amp;#8211;K83, K85&amp;#8211;K86,&lt;br&gt;K56, K65, K55, K57, etc.)&lt;br&gt;N = 72,676 admissions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;fontSize=10;fontFamily=Helvetica;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="140" width="340" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Box 3: ICU acute abdomen -->
+        <mxCell id="box3" value="Acute abdomen ICU patients&lt;br&gt;N = 8,933 ICU stays" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;fontSize=10;fontFamily=Helvetica;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="340" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Box 4: Complete vital signs -->
+        <mxCell id="box4" value="Complete vital signs data&lt;br&gt;(HR, SBP, DBP, MAP in 24h)&lt;br&gt;N = 8,933" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;fontSize=10;fontFamily=Helvetica;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="390" width="340" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Box 5: Extended covariates -->
+        <mxCell id="box5" value="Extended covariates available&lt;br&gt;(Lactate, WBC, Vasopressor,&lt;br&gt;Surgery, Mechanical ventilation)&lt;br&gt;N = 8,933" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1.5;fontSize=10;fontFamily=Helvetica;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="510" width="340" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Box 6: Final CC cohort (GREEN) -->
+        <mxCell id="box6" value="&lt;b&gt;Complete-case analysis cohort&lt;/b&gt;&lt;br&gt;N = 5,728&lt;br&gt;In-hospital mortality: 19.9% (1,141)&lt;br&gt;Strict ICU mortality: 13.2% (758)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontSize=10;fontFamily=Helvetica;fontStyle=0;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="640" width="380" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ========== EXCLUSION BOXES (right side) ========== -->
+
+        <!-- Exclusion 1: Non-ICU -->
+        <mxCell id="excl1" value="&lt;b&gt;Excluded:&lt;/b&gt;&lt;br&gt;Non-ICU admissions&lt;br&gt;(n = 63,743)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=1.2;fontSize=9;fontFamily=Helvetica;fontColor=#B85450;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="530" y="150" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Exclusion 2: Age < 18, invalid vitals -->
+        <mxCell id="excl2" value="&lt;b&gt;Excluded:&lt;/b&gt;&lt;br&gt;Age &amp;lt; 18 (n = 0)&lt;br&gt;Invalid vitals (n = 0)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=1.2;fontSize=9;fontFamily=Helvetica;fontColor=#B85450;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="530" y="280" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Exclusion 3: Missing SI/covariates -->
+        <mxCell id="excl3" value="&lt;b&gt;Excluded:&lt;/b&gt;&lt;br&gt;Missing SI derivatives&lt;br&gt;or extended covariates&lt;br&gt;(n = 3,205)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=1.2;fontSize=9;fontFamily=Helvetica;fontColor=#B85450;align=center;verticalAlign=middle;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="530" y="510" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ========== VERTICAL ARROWS (main flow) ========== -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2C3E50;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="box1" target="box2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2C3E50;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="box2" target="box3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2C3E50;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="box3" target="box4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2C3E50;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="box4" target="box5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2C3E50;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="box5" target="box6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== HORIZONTAL ARROWS (to exclusions) ========== -->
+        <mxCell id="arrow_excl1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#B85450;strokeWidth=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="box2" target="excl1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow_excl2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#B85450;strokeWidth=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="box3" target="excl2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow_excl3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#B85450;strokeWidth=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="box5" target="excl3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== TITLE ========== -->
+        <mxCell id="title" value="&lt;b&gt;Figure 1. Patient Selection Flowchart&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontFamily=Helvetica;fontColor=#2C3E50;" vertex="1" parent="1">
+          <mxGeometry x="150" y="0" width="550" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
