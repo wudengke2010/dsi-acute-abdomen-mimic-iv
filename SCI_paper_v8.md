@@ -2,7 +2,7 @@
 
 **Jiqiang Liu** [1]†, **Dengke Wu** [1]*
 
-ORCID Jiqiang Liu: 0009-0000-9884-3089; ORCID Dengke Wu: 0009-0008-1363-9621
+ORCID Jiqiang Liu: 0009-0000-9884-3089; ORCID Dengke Wu: 0000-0003-4101-8461
 
 [1] Department of Emergency Medicine, and Emergency Medicine and Difficult Diseases Institute, The Second Xiangya Hospital of Central South University, Changsha 410011, Hunan, China
 

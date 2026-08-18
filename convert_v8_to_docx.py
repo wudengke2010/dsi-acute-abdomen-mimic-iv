@@ -331,7 +331,7 @@ Department of Emergency Medicine, and Emergency Medicine and Difficult Diseases 
 The Second Xiangya Hospital of Central South University
 Changsha 410011, Hunan, China
 Email: wudk2010@csu.edu.cn
-ORCID: 0009-0008-1363-9621
+ORCID: 0000-0003-4101-8461
 
 Jiqiang Liu
 Department of Emergency Medicine

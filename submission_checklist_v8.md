@@ -196,7 +196,7 @@ Authors declare no competing interests.
 | B-H FDR多重比较校正 | ✅ | 所有DeLong均保持显著 |
 | MICE第二插补策略 | ✅ | OR=2.63 vs IterativeImputer 2.65 |
 | GitHub代码公开 | ✅ | dsi-acute-abdomen-mimic-iv |
-| ORCID作者ID | ✅ | Liu: 0009-0000-9884-3089; Wu: 0009-0008-1363-9621 |
+| ORCID作者ID | ✅ | Liu: 0009-0000-9884-3089; Wu: 0000-0003-4101-8461 |
 | Cover Letter含完整信息 | ✅ | 标题/DAG/E-value/GitHub/ORCID/基金 |
 | 预草拟审稿回复 | ✅ | pre_draft_reviewer_responses.md (15条) |
 
