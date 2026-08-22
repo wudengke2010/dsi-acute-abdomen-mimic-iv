@@ -67,11 +67,46 @@ Both datasets are available via PhysioNet:
 | File | Description |
 |------|-------------|
 | `SCI_paper_v8.md` | Final manuscript (Markdown source) |
-| `convert_v8_to_docx.py` | Convert manuscript to AIC-formatted DOCX |
-| `Cover_Letter_AIC.md` | Cover letter for Annals of Intensive Care |
+| `convert_v8_to_docx.py` | Convert manuscript to formatted DOCX |
+| `Cover_Letter_WJES.md` | Cover letter for World Journal of Emergency Surgery |
+| `make_strobe_wjes.py` | STROBE checklist generation script |
 | `research_protocol.md` | Statistical Analysis Plan (SAP) |
 | `pre_draft_reviewer_responses.md` | Anticipated reviewer responses |
-| `submission_checklist_v8.md` | AIC submission checklist |
+
+## Public Data and Results
+
+This repository publishes all **aggregate-level** results from the study (no patient-level data, per the PhysioNet Data Use Agreement):
+
+### Published Figures (`figures_v7/`, 300 dpi, PNG + PDF)
+| File | Description |
+|------|-------------|
+| `Fig1_Flowchart.png` | Study cohort flow diagram |
+| `Fig2_ROC.png` | ROC curves with DeLong comparisons |
+| `Fig3_Forest.png` | Forest plot of adjusted odds ratios |
+| `FigS1–S11` | Supplementary figures (calibration, DCA, RCS, subtypes, DAG, component decomposition, nomogram, CIC) |
+
+### Published Result Tables (CSV)
+| File | Description |
+|------|-------------|
+| `Table_S3_Baseline_Characteristics.csv` | Baseline characteristics by DSI quartile |
+| `Table_S6_Model_Coefficients.csv` | Full multivariable model coefficients |
+| `Table_S7_eICU_Baseline_by_DSI_Quartile.csv` | External validation cohort baseline |
+| `Table_S8_Excluded_vs_CC_Characteristics.csv` | Excluded vs complete-case comparison |
+| `Table_S11_Sensitivity_Analyses_Summary.csv` | 14 sensitivity analysis scenarios |
+| `table2_auc.csv`, `table3_nri_idi.csv` | AUC / NRI / IDI performance metrics |
+| `table4_rcs.csv` | Restricted cubic spline dose–response |
+| `table8_subgroup_auc.csv` | Subtype-specific AUCs |
+| `table_bootstrap_validation.csv` | Bootstrap internal validation |
+| Other `Table_S*.csv` / `table*.csv` | Additional supplementary result tables |
+
+### Published Statistics (JSON)
+| File | Description |
+|------|-------------|
+| `v6_revision_statistics.json` | Complete model statistics (ORs, CIs, AUCs, P values) |
+| `component_decomposition_results.json` | HR vs DBP vs DSI decomposition analysis |
+| `eicu_external_validation_results.json` | External validation metrics |
+
+> **Note**: Patient-level datasets (`analysis_dataset*.csv`, `icu_vitals*.csv`, `eicu_external_validation_dataset.csv`, etc.) are **not** distributed here. The source databases (MIMIC-IV, eICU-CRD) are available from PhysioNet to credentialed researchers; the provided scripts reproduce all derived datasets end-to-end.
 
 ## Key Results
 

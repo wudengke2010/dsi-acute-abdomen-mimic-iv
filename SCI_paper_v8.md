@@ -24,14 +24,6 @@ ORCID Jiqiang Liu: 0009-0000-9884-3089; ORCID Dengke Wu: 0000-0003-4101-8461
 
 **Keywords**: Diastolic shock index; Acute abdomen; In-hospital mortality; SOFA; External validation
 
-## Highlights
-
-- DSI independently predicts in-hospital mortality after SOFA adjustment (OR 2.18)
-- DSI quartile gradient: 12.1% to 32.8% mortality (2.7-fold increase)
-- DSI captures prognostic information unavailable from isolated HR or DBP
-- External validation across 208 hospitals preserved AUC 0.792
-- DSI provides zero-cost bedside stratification when lab data are pending
-
 ---
 
 ## Abbreviations
@@ -40,11 +32,11 @@ SI, shock index; MSI, modified shock index; DSI, diastolic shock index; Age-SI, 
 
 ---
 
-## 1. Introduction
+## Background
 
 Acute abdomen—severe abdominal pain of sudden onset requiring urgent evaluation—remains one of the most challenging presentations in emergency medicine [1]. It encompasses etiologies from self-limiting inflammation to life-threatening intestinal ischemia, with mortality varying dramatically across subtypes (from <5% in uncomplicated appendicitis to >40% in mesenteric ischemia) [1,2]. Early risk stratification is critical, as delayed recognition of deteriorating patients contributes substantially to preventable mortality [3].
 
-The shock index (SI=HR/SBP), first described by Allgöwer and Burri [4], has inspired several derivatives: modified shock index (MSI=HR/MAP) [5], diastolic shock index (DSI=HR/DBP) [6], and age-adjusted shock index (Age-SI=SI×Age/10) [7]. These predict mortality in trauma [8] and sepsis [9], but have never been systematically evaluated in acute abdomen—a population with unique pathophysiological diversity including inflammation-driven vasodilation, mechanical obstruction, perforation-induced peritonitis, and mesenteric ischemia. Ospina-Tascón et al. [6] demonstrated that DSI, calculated at vasopressor initiation in septic shock, identified patients at high risk of death—where isolated HR or diastolic arterial pressure (DAP) did not. Whether this principle extends to the heterogeneous acute abdomen population, and whether DSI provides independent prognostic value beyond established ICU severity scores, remains unknown.
+The shock index (SI=HR/SBP), first described by Allgöwer and Burri [4], has inspired several derivatives: modified shock index (MSI=HR/MAP) [5], diastolic shock index (DSI=HR/DBP) [6], and age-adjusted shock index (Age-SI=SI×Age/10) [7]. These predict mortality in trauma [8] and sepsis [9], but have never been systematically evaluated in acute abdomen—a population with unique pathophysiological diversity including inflammation-driven vasodilation, mechanical obstruction, perforation-induced peritonitis, and mesenteric ischemia. Existing bedside prognostic tools in this domain carry practical constraints: qSOFA augmented with lactate improves mortality prediction in complicated intra-abdominal infection but still requires laboratory measurement [41]; the WSES PIPAS score for acute peritonitis aggregates ten physiological and laboratory parameters [42]; and the relative performance of simple scores is setting-dependent [43]. Whether an even simpler vital-sign ratio provides independent prognostic value in the broader acute abdomen population has yet to be examined. Ospina-Tascón et al. [6] demonstrated that DSI, calculated at vasopressor initiation in septic shock, identified patients at high risk of death—where isolated HR or diastolic arterial pressure (DAP) did not. Whether this principle extends to the heterogeneous acute abdomen population, and whether DSI provides independent prognostic value beyond established ICU severity scores, remains unknown.
 
 Moreover, previous SI-derivative studies have relied primarily on AUC comparisons without evaluating independent predictive value beyond established ICU predictors (lactate, vasopressor use, severity scores), nor assessing model robustness through bootstrap validation, sensitivity analyses, or competing risk frameworks. The TRIPOD+AI guidelines [10] emphasize that prediction models must demonstrate clinical benefit via NRI/IDI/DCA [11] and undergo external validation. Component decomposition analysis—demonstrating that a ratio provides prognostic information unavailable from its individual components—is particularly important for DSI, which has been questioned on dimensional grounds [12].
 
@@ -52,19 +44,19 @@ This study was reported following the STROBE statement [13] and the TRIPOD+AI gu
 
 ---
 
-## 2. Methods
+## Methods
 
-### 2.1 Data Sources and Study Design
+### Data sources and study design
 
 This retrospective cohort study utilized MIMIC-IV v3.1 [14] (Beth Israel Deaconess Medical Center, Boston, MA, 2008–2022; 546,028 admissions). External validation used eICU-CRD v2.0 [15] (208 US hospitals, 2014–2015). Both were accessed via PhysioNet with required training. IRB approval (BIDMC, MIT) was obtained; individual consent was waived for de-identified data. This study was reported following STROBE [13] and TRIPOD+AI [10] guidelines.
 
-### 2.2 Study Population (Figure 1)
+### Study population (Figure 1)
 
 **Inclusion**: age ≥18; ICU admission via ED; acute abdomen ICD-9/10 codes (Supplementary Table S1); complete vital signs (HR, SBP, DBP) within 24h. **Exclusion**: missing extended covariates (lactate, WBC). From 546,028 admissions, 5,728 complete cases (CC) were analyzed. The 3,205 excluded patients had substantially lower severity (mortality 8.0% vs 19.9%, vasopressor 12% vs 43.6%, MV 17% vs 52.5%), reflecting selection bias toward patients receiving arterial blood gas monitoring (Supplementary Table S8). The DAG identifies lactate/WBC measurement as a collider opened by complete-case selection, inducing collider stratification bias; MI (N=8,933) and E-value analysis addressed this bias.
 
 Acute abdomen subtypes based on ICD: perforation, ischemia, obstruction, inflammation, and other (29.9%, N=1,712, containing complications alongside primary codes; Supplementary Table S5). Priority: perforation > ischemia > obstruction > inflammation > other.
 
-### 2.3 Variables and Analysis
+### Variables and statistical analysis
 
 **SI derivatives** (first 24 hours of ICU admission): SI=HR/SBP, MSI=HR/MAP, DSI=HR/DBP, Age-SI=SI×Age/10. Blood pressure priority: arterial line > non-invasive BP > manual entries [14]. DAP is nearly constant from ascending aorta to peripheral vessels [16,17], supporting peripheral DBP for DSI calculation.
 
@@ -78,44 +70,93 @@ Acute abdomen subtypes based on ICD: perforation, ischemia, obstruction, inflamm
 
 **Statistical methods**: The analysis plan was pre-specified and documented before data extraction. Multivariable logistic regression at three model levels: (1) basic baseline (age, sex, CCI); (2) extended baseline (adding lactate, WBC, vasopressor use, MV, SOFA; excluding surgery); and (3) extended+DSI. This nested framework isolates DSI's incremental contribution. ROC/AUC with DeLong comparisons [20] for all pairwise model comparisons. Benjamini-Hochberg false discovery rate (FDR) correction [38] was applied to all DeLong comparisons to account for multiplicity; the 5% FDR threshold was used. VIF for multicollinearity (all <3.0; maximum SOFA=2.42), confirming no problematic collinearity between DSI and SOFA or its components. NRI: categorical (<10%, 10–30%, >30% risk strata) as the primary reclassification metric and category-free (continuous) NRI [11] as a secondary measure; IDI [11] for integrated discrimination improvement. DCA [21] for clinical net benefit across threshold probabilities. RCS (4 knots at 5th, 35th, 65th, 95th percentiles) [22] to assess dose-response relationships and potential nonlinearity. Cumulative incidence functions for competing risks (in-hospital death vs discharge alive) by DSI quartile [23]; formal Fine-Gray subdistribution hazard models were not implemented (CIF curves are descriptive only). Calibration: HL goodness-of-fit test, Brier score, and calibration plots. Bootstrap internal validation (200 resamples; optimism=0.002, corrected AUC=0.788). Sensitivity analyses (14 scenarios, Supplementary Table S11). MI: 5 imputations using IterativeImputer on the full dataset (N=8,933); Multiple Imputation by Chained Equations (MICE) was used as a second imputation strategy to verify the stability of DSI's OR under different missing-data assumptions (Supplementary Table S11). E-values were computed to assess robustness to unmeasured confounding [40]. All analyses: Python 3.13 (pandas, scipy, statsmodels, scikit-learn, DuckDB); P<0.05 considered significant.
 
-### 2.4 External Validation
+### External validation
 
 MIMIC-IV models were applied to eICU-CRD without retraining (TRIPOD type 2b/3b [10]). **Methodological note**: eICU SOFA was computed from APACHE APS variables rather than identical MIMIC-IV concept definitions; platelets were unavailable (hematocrit substituted). This heterogeneity is reflected in higher eICU median SOFA (9 [7–12] vs MIMIC-IV 7 [4–11]). Both un-recalibrated and recalibrated (logistic intercept/slope adjustment) metrics are reported per TRIPOD+AI [10]. Performance: AUC/DeLong, cf-NRI/IDI, DSI quartile gradient (derivation cutoffs applied; eICU quartile sizes unequal: Q1=1,294, Q4=1,677).
 
 ---
 
-## 3. Results
+## Results
 
-### 3.1 Baseline Characteristics (Table 1)
+### Baseline characteristics (Table 1)
 
 Among 5,728 CC ICU stays: median age 68 [57–79], 56.0% male, in-hospital mortality 19.9% (1,141 deaths; 33.6% after ICU discharge). SOFA 7 [4–11]; significantly higher in non-survivors (11 [8–15] vs 6 [4–10], P<10⁻¹⁴⁰). Vasopressor use 43.6%; MV 52.5%; lactate 2.0 [1.3–3.2] mmol/L; WBC 11.6 [7.5–16.9] ×10⁹/L; CCI 3 [1–5]; ICU LOS 2.7 [1.5–5.8] days. Subtypes: inflammation (37.5%, N=2,149, mortality 16.8%), other (29.9%, N=1,712, mortality 16.9%), obstruction (20.6%, N=1,180, mortality 21.5%), ischemia (6.2%, N=353, mortality 40.5%), perforation (5.8%, N=334, mortality 28.1%). Ischemia had the highest mortality, consistent with the time-critical nature of mesenteric vascular compromise [28,30].
 
-### 3.2 DSI Quartile Mortality Gradient (Table 1)
+**Table 1.** Baseline characteristics by DSI quartile (MIMIC-IV v3.1, complete-case cohort, N=5,728).
+
+| Characteristic | Overall (N=5,728) | Q1 Low (n=1,432) | Q2 (n=1,432) | Q3 (n=1,432) | Q4 High (n=1,432) |
+|---|---|---|---|---|---|
+| Age, years | 68.0 [57.0–79.0] | 66.0 [55.0–78.0] | 68.0 [57.0–79.0] | 69.0 [58.0–80.0] | 69.0 [56.0–80.0] |
+| Male, n (%) | 3,206 (56.0) | 897 (62.6) | 800 (55.9) | 796 (55.6) | 713 (49.8) |
+| CCI | 3.0 [1.0–5.0] | 3.0 [1.0–5.0] | 3.0 [1.0–5.0] | 3.0 [1.0–5.0] | 3.0 [1.0–5.0] |
+| SOFA score | 7.0 [4.0–11.0] | 6.0 [3.0–9.0] | 7.0 [4.0–10.0] | 8.0 [5.0–11.0] | 10.0 [6.0–13.0] |
+| Lactate, mmol/L | 2.0 [1.3–3.2] | 1.7 [1.2–2.7] | 1.9 [1.2–2.9] | 2.0 [1.4–3.3] | 2.6 [1.5–4.1] |
+| WBC, ×10⁹/L | 11.6 [7.5–16.9] | 10.4 [7.0–15.1] | 11.4 [7.6–16.2] | 12.2 [7.8–17.9] | 12.2 [7.4–18.8] |
+| Vasopressor use, n (%) | 2,498 (43.6) | 395 (27.6) | 562 (39.2) | 678 (47.3) | 863 (60.3) |
+| Surgery, n (%) | 3,863 (67.4) | 867 (60.5) | 926 (64.7) | 1,009 (70.5) | 1,061 (74.1) |
+| Mechanical ventilation, n (%) | 3,007 (52.5) | 601 (42.0) | 705 (49.2) | 799 (55.8) | 902 (63.0) |
+| ICU LOS, days | 2.7 [1.5–5.8] | 2.1 [1.2–4.1] | 2.6 [1.5–5.1] | 2.9 [1.6–6.2] | 3.4 [1.8–8.0] |
+| In-hospital mortality, n (%) | 1,141 (19.9) | 173 (12.1) | 208 (14.5) | 291 (20.3) | 469 (32.8) |
+| ICU mortality, n (%) | 758 (13.2) | 94 (6.6) | 109 (7.6) | 186 (13.0) | 369 (25.8) |
+| Subtype: inflammation, n (%) | 2,149 (37.5) | 615 (42.9) | 537 (37.5) | 519 (36.2) | 478 (33.4) |
+| Subtype: obstruction, n (%) | 1,180 (20.6) | 245 (17.1) | 304 (21.2) | 307 (21.4) | 324 (22.6) |
+| Subtype: perforation, n (%) | 334 (5.8) | 40 (2.8) | 60 (4.2) | 92 (6.4) | 142 (9.9) |
+| Subtype: ischemia, n (%) | 353 (6.2) | 64 (4.5) | 56 (3.9) | 89 (6.2) | 144 (10.1) |
+| Subtype: other, n (%) | 1,712 (29.9) | 468 (32.7) | 475 (33.2) | 425 (29.7) | 344 (24.0) |
+
+### DSI quartile mortality gradient (Table 1)
 
 DSI (mean 24h) quartiles demonstrated a dramatic gradient (χ²=229, P=2.02×10⁻⁴⁹): Q1<1.279 (12.1%), Q2 1.279–1.502 (14.5%), Q3 1.502–1.762 (20.3%), Q4>1.762 (32.8%)—a 2.7-fold increase. Higher quartiles had progressively higher lactate, vasopressor use, and MV rates, confirming DSI as an integrative hemodynamic severity marker.
 
-### 3.3 Component Decomposition Analysis (Figure S8)
+### Component decomposition analysis (Figure S8)
 
 Following Ospina-Tascón et al. [6], we examined whether isolated HR or DBP could replicate DSI's prognostic value. Individual AUCs for in-hospital mortality were: HR=0.571, DBP=0.597, SBP=0.638, MAP=0.621, SI=0.635, MSI=0.642, **DSI=0.644**, Age-SI=0.651, lactate=0.672, SOFA=0.740. DSI significantly outperformed isolated HR (DeLong P<0.001) and DBP (DeLong P<0.001), confirming that the ratio captures prognostic information unavailable from either component alone. DSI did not significantly outperform SI (P=0.21) or MSI (P=0.58), but the matched-stratification analysis (below) demonstrates DSI's unique contribution. All DeLong comparisons significant before correction remained significant after Benjamini-Hochberg FDR correction at the 5% threshold.
 
 Critically, within each DBP quintile, DSI tertile consistently stratified mortality: for DBP Q3 (middle range), mortality progressed from 12.0% (low DSI) to 18.8% (mid DSI) to 32.5% (high DSI). Similarly, within HR quintiles, DSI tertile maintained its discriminatory capacity: for HR Q3, mortality progressed from 12.0% to 18.1% to 24.1%. Logistic regression confirmed DSI as a significant independent predictor within each DBP quintile (OR 2.01–6.43, all P<0.05 except Q5 high where P=0.054). These findings mirror the component decomposition in septic shock [6] and directly address the dimensional concern raised by Dalmau [12]: while DSI is dimensionally a ratio, it captures the simultaneous signal of compensatory tachycardia and vasomotor tone loss that neither component provides alone.
 
-### 3.4 Primary Model Results (Table 2)
+### Primary model results (Table 2)
 
 **Table 2, Panel A (MIMIC-IV)**: Extended baseline (no surgery) AUC=0.785 [0.769–0.801]; adding DSI: AUC=0.790 [0.775–0.805], ΔAUC=0.005 (DeLong P=0.012). DSI: OR=2.18 [1.79–2.65], P=7.59×10⁻¹⁵; SOFA: OR=1.16 [1.13–1.19], P<10⁻³⁶; lactate: OR=1.14 [1.11–1.17]; CCI: OR=1.14 [1.11–1.16]. Vasopressor (P=0.14), MV (P=0.45), gender (P=0.08), and WBC (P=0.07) were non-significant after SOFA adjustment. ΔAUC=0.005 was below clinical relevance thresholds (≥0.02 per Cook [24] and Vickers [25]); categorical NRI (0.008, CI −0.009 to 0.044) crossed zero. Category-free NRI (0.252, CI 0.183–0.331) and IDI (0.013, CI 0.007–0.020) were significant, confirming additional continuous prognostic information. The primary DeLong comparison (Extended vs Extended+DSI, P=0.012) and all significant between-derivative DeLong tests remained significant after Benjamini-Hochberg FDR correction. VIF all <3.0; bootstrap optimism=0.002. Full coefficients: Supplementary Table S6; Forest plot: Figure 3; ROC curves: Figure 2.
 
 **Table 2, Panel B (eICU-CRD)**: N=5,755 (208 hospitals), mortality 20.0%, SOFA 9 [7–12]. Extended baseline AUC=0.785; Extended+DSI AUC=0.792; ΔAUC=0.0074 (DeLong P=0.0026). Un-recalibrated: Brier=0.38–0.59, HL P<0.001 (catastrophically poor). After logistic recalibration (intercept −3.935, slope 0.952): Brier=0.126, HL P=0.266. cf-NRI=0.277, IDI=0.014. DSI quartile gradient: Q1=12.0%→Q4=33.5% (2.8-fold). The large intercept shift indicates discrimination is transportable (slope near 1.0), but absolute risk estimates require local recalibration.
 
-### 3.5 Sensitivity Analyses (Supplementary Table S11)
+**Table 2.** Independent association of DSI with in-hospital mortality and model performance in derivation and external validation cohorts.
+
+Panel A. Multivariable logistic regression, MIMIC-IV (N=5,728)
+
+| Variable | OR (95% CI) | P value |
+|---|---|---|
+| Age, per year | 1.022 (1.016–1.027) | <0.001 |
+| Male sex | 0.877 (0.756–1.018) | 0.084 |
+| CCI, per point | 1.137 (1.109–1.165) | <0.001 |
+| Lactate, per mmol/L | 1.142 (1.110–1.174) | <0.001 |
+| WBC, per ×10⁹/L | 1.006 (1.000–1.012) | 0.074 |
+| Vasopressor use | 1.142 (0.957–1.363) | 0.142 |
+| Mechanical ventilation | 1.078 (0.886–1.312) | 0.452 |
+| SOFA, per point | 1.160 (1.134–1.188) | <0.001 |
+| DSI, per unit | 2.179 (1.791–2.652) | <0.001 |
+
+Panel B. Model performance: MIMIC-IV derivation vs eICU-CRD external validation
+
+| Metric | MIMIC-IV (N=5,728) | eICU-CRD (N=5,755) |
+|---|---|---|
+| Extended baseline AUC | 0.785 (0.769–0.801) | 0.785 |
+| Extended + DSI AUC | 0.790 (0.775–0.805) | 0.792 |
+| ΔAUC (DeLong P) | 0.005 (P=0.012) | 0.007 (P=0.003) |
+| Categorical NRI | 0.008 (−0.009 to 0.044) | — |
+| Category-free NRI | 0.252 (0.183–0.331) | 0.277 |
+| IDI | 0.013 (0.007–0.020) | 0.014 |
+
+### Sensitivity analyses (Supplementary Table S11)
 
 DSI's predictive value was robust across 14 analyses (OR 2.15–2.65, all P<10⁻¹¹), addressing nine bias categories: confounding, misclassification, overadjustment, collider/selection, misspecification, utility, overfitting, heterogeneity, and competing risks (Supplementary Table S11). Key findings: surgery appeared protective (OR=0.68, survivorship bias) while surgery_24h was non-significant (OR=0.88, P=0.46); MI (N=8,933) yielded AUC=0.822, DSI OR=2.65, with MICE confirming stability (OR=2.63); non-surgical subgroup showed best discrimination (AUC=0.826, DSI OR=2.28); RCS confirmed linearity (P_nonlinear>0.05); calibration was excellent (HL P=0.691, Brier=0.126); and CIF curves separated by DSI quartile (Supplementary Figure S7).
 ---
 
-## 4. Discussion
+## Discussion
 
 To the best of our knowledge, this is the first study to systematically evaluate SI-derived parameters in acute abdomen ICU patients, with SOFA adjustment, component decomposition analysis, bootstrap validation, MI, 14 sensitivity analyses, competing risk framework, external validation across 208 hospitals, and STROBE/TRIPOD+AI-compliant reporting. Five principal findings emerge.
 
-### 4.1 Bias and Causal Inference
+### Bias and causal inference
 
 We addressed causal inference using a pre-specified DAG (Supplementary Figure S11). The DAG formalizes why complete-case selection on lactate and WBC is a collider, not merely "selection bias": acute abdomen severity increases both the likelihood of laboratory measurement and the risk of death; conditioning on having lactate/WBC measured opens a non-causal pathway between DSI and mortality, potentially biasing the observed association [39]. Two strategies mitigate this: first, MI on the full eligible cohort (N=8,933) produced an even larger DSI effect (OR=2.65), suggesting the CC estimate (OR=2.18) is conservative rather than inflated. Second, the E-value for the primary OR is 3.78 (2.98 for the 95% CI lower bound; Supplementary Table S13). This means an unmeasured confounder would need to be associated with both DSI and mortality by a risk ratio exceeding 3.7-fold—larger than the effects of SOFA (OR=1.16/point), lactate (OR=1.14/mmol/L), or CCI (OR=1.14/point) in our model—to explain away the point estimate; 3.0-fold to move the confidence interval to the null. Such confounders are biologically and clinically implausible after SOFA adjustment, supporting the robustness of the independent association. This causal framework also clarifies why vasopressor and MV became non-significant after SOFA adjustment: both are downstream consequences of the same hemodynamic collapse captured by SOFA and lactate, and are therefore mediators rather than confounders in the DSI→mortality pathway.
 
@@ -131,41 +172,41 @@ However, ΔAUC=0.005 is below clinical relevance thresholds (≥0.02) [24,25], a
 
 **Fifth**, external validation in eICU-CRD (208 hospitals) preserved discrimination (AUC=0.792, ΔAUC=0.0074) and replicated the quartile gradient. However, direct application yielded catastrophically poor calibration (Brier 0.38–0.59), requiring logistic recalibration (intercept −3.935, slope 0.952). The near-ideal slope confirms discrimination transportability, but the large intercept shift means MIMIC-IV-derived absolute risk estimates cannot be directly applied to new settings without local recalibration.
 
-### 4.2 Pathophysiological Rationale
+### Pathophysiological rationale
 
 DSI (HR/DBP) captures the relationship between cardiac output proxy (HR) and diastolic perfusion pressure (DBP). In healthy individuals, DAP is determined by vascular tone and remains nearly constant from the ascending aorta to peripheral vessels [16,17], reflecting the Windkessel effect—aortic elastic recoil maintaining diastolic perfusion pressure [26]. This supports the use of non-invasive DBP for DSI calculation, even when inflammatory conditions alter arterial compliance [6,27].
 
 In acute abdomen, several mechanisms converge to make DSI informative. First, progressive vasodilation from inflammatory mediators and splanchnic vascular compromise manifests as diastolic pressure decline—reflecting loss of peripheral vascular tone before systolic failure [6,26]. The splanchnic circulation receives approximately 25% of cardiac output [28], and intra-abdominal pathology directly compromises this bed, causing early DAP reduction through regional vasodilation and third-space losses. Second, compensatory tachycardia develops as cardiac output rises to maintain perfusion against falling vascular resistance [6,29]. The simultaneous rise in HR and fall in DBP—captured by their ratio—signals more severe circulatory dysfunction than either component alone, as confirmed by our matched-stratification analysis. Third, in mesenteric ischemia, reperfusion injury perpetuates systemic inflammation [30], likely contributing to the high mortality in this subgroup (40.5%, AUC=0.807).
 
-The ratio formulation addresses the dimensional concern raised by Dalmau [12]: although DSI is dimensionless, its clinical meaning lies in capturing the **compensatory-to-decompensatory transition**—where tachycardic compensation can no longer mask loss of vasomotor tone. Our matched-stratification empirically confirms this: at similar DBP values, mortality varies dramatically by DSI tertile (DBP Q3: 12.0%→32.5%), demonstrating that the ratio provides information beyond either component alone.
+The ratio formulation addresses the dimensional concern raised by Dalmau [12]: although DSI is dimensionless, its clinical meaning lies in capturing the **compensatory-to-decompensatory transition**—where tachycardic compensation can no longer mask loss of vasomotor tone. Our matched-stratification empirically confirms this: at similar DBP values, mortality varies dramatically by DSI tertile (DBP Q3: 12.0%→32.5%), demonstrating that the ratio provides information beyond either component alone. Notably, machine-learning explainability analyses in postoperative critically ill patients have independently identified diastolic blood pressure among the most influential predictors of mortality [44], corroborating from a data-driven perspective the prognostic weight of DBP embedded in the DSI formulation.
 
-### 4.3 Comparison with Previous Studies
+### Comparison with previous studies
 
 Our results extend the work of Ospina-Tascón et al. [6] from septic shock (N=761, mortality 43%) to acute abdomen (N=5,728, mortality 19.9%). In both populations, DSI outperformed isolated HR and DBP for mortality prediction, and the quartile/quintile gradient was dramatic. The original DSI study in septic shock reported median DSI values of 2.28 (preliminary cohort) and 1.97 (ANDROMEDA-SHOCK) at vasopressor initiation [6]; our acute abdomen cohort had a lower median DSI (1.50 [1.28–1.76]), consistent with a less vasodilatory population at ICU admission—before vasopressor initiation—supporting DSI's utility as an **early** marker before hemodynamic collapse.
 
 Our study adds several methodological advances: (1) SOFA-adjusted evaluation establishing DSI as an independent predictor beyond the most widely used ICU severity score; (2) formal NRI/IDI with confidence intervals, enabling quantitative assessment of reclassification; (3) component decomposition in a different patient population, confirming the generalizability of the principle that "isolated DAP or high HR values do not clearly identify such risk" [6]; (4) external validation in 208 hospitals, far exceeding the dual-cohort design of the original study; and (5) competing risk assessment via CIF. Ospina-Tascón et al. [6] did not perform these analyses but used time-course analysis and DSI×norepinephrine dose interaction—approaches not replicated here due to the retrospective nature of our data. The DSI trajectory analysis (survivors vs non-survivors) proposed by Ospina-Tascón [6] represents an important future direction for our acute abdomen cohort.
 
-Our findings also extend the broader SI-derivative literature. Jouffroy et al. [5] validated MSI in prehospital septic shock; Liu et al. [9] confirmed SI derivatives in sepsis; and Olaussen et al. [8] systematically reviewed SI in trauma. King et al. [33] and Rady et al. [34] established the shock index's value in acute circulatory failure. None evaluated acute abdomen specifically, and none performed component decomposition or external validation. The successful external validation in eICU-CRD (208 hospitals, AUC=0.792 preserved) substantially strengthens generalizability evidence—a key gap in prior SI-derivative studies identified by the TRIPOD+AI framework [10,32].
+Our findings also extend the broader SI-derivative literature. Jouffroy et al. [5] validated MSI in prehospital septic shock; Liu et al. [9] confirmed SI derivatives in sepsis; and Olaussen et al. [8] systematically reviewed SI in trauma. King et al. [33] and Rady et al. [34] established the shock index's value in acute circulatory failure. None evaluated acute abdomen specifically, and none performed component decomposition or external validation. Within abdominal emergencies themselves, the WSES PIPAS consortium validated a ten-variable bedside score for acute peritonitis, with mortality rising from 2.9% at 0–1 points to 86.7% at 7–8 points [42]; our single vital-sign ratio achieved comparable directional risk stratification (12.1%→32.8%) using two routinely monitored parameters, and the external validation in eICU-CRD (208 hospitals, AUC=0.792 preserved) substantially strengthens generalizability evidence—a key gap in prior SI-derivative studies identified by the TRIPOD+AI framework [10,32].
 
 Our results also speak to recently published models for intra-abdominal infection. Zhang et al. [35] developed a nomogram for intra-abdominal sepsis mortality using LASSO-selected variables (lactate, age, APTT, BUN, TBIL, platelets; AUC=0.795) from the same MIMIC-IV database. Their model excluded hemodynamic parameters and relied on six results requiring 30–60 minutes to obtain. In contrast, DSI provides zero-cost bedside risk stratification from routine vital signs within seconds. Our Extended+DSI model achieved virtually identical discrimination (AUC=0.790) with only HR and DBP added to baseline covariates, and our eICU validation cohort (N=5,755, 1,151 deaths) was substantially larger than theirs (N=149, 33 deaths). Jeon et al. [36] evaluated DSI for septic shock progression at ED triage (N=1,267, Korea), reporting DSI AUC=0.717 versus SI AUC=0.707 (DeLong P=0.14). While DSI and SI performed similarly for shock prediction in that ED population, DSI tertiles correlated with vasopressor dose and time to initiation, supporting the hemodynamic severity interpretation central to our findings. The context-dependence is important: in septic shock, SI may rise similarly to DSI after circulatory collapse; in acute abdomen at ICU admission, our matched-stratification shows DSI refines prognosis beyond isolated HR or DBP. These complementary reports strengthen DSI's bedside positioning while underscoring that its incremental value is setting-specific.
 
-### 4.4 Clinical Implications
+### Clinical implications
 
 DSI offers five advantages: (1) independent predictive value beyond SOFA (OR=2.18); (2) dramatic quartile gradient (12.1%→32.8%) with actionable thresholds; (3) zero-cost bedside availability from routine vitals without laboratory tests or specialized equipment; (4) externally validated discrimination across 208 hospitals (AUC=0.792); and (5) immediate availability—DSI is calculated within seconds, whereas SOFA components may require 30–60 minutes [19,31]. This temporal advantage is particularly relevant in the ED and early ICU course.
 
 In ischemia (mortality 40.5%, AUC=0.807) and non-surgical acute abdomen (AUC=0.826), DSI may help identify patients needing urgent surgical evaluation or intensive monitoring. The 33.6% post-ICU death rate suggests DSI should guide post-ICU monitoring decisions. However, clinicians should understand that DSI complements rather than replaces SOFA: ΔAUC below clinical thresholds [24,25] and categorical NRI crossing zero mean DSI should not override SOFA-based categorical risk classifications, but rather provide immediate risk stratification when laboratory data are unavailable [31].
 
-### 4.4 Limitations
+### Strengths and limitations
 
-(1) Single-center retrospective derivation, though externally validated in 208 hospitals; selection bias from 36% exclusion (primarily lactate) enriched CC with sicker patients (mortality 19.9% vs 8.0% in excluded), addressed by MI (N=8,933, AUC=0.822, DSI OR=2.65); eICU validation also used CC (32.6% rate), creating a parallel selection bias. Microbiological data were not incorporated; Luo et al. [37] and Zhang et al. [35] showed Enterococcus and fungal infections are independently associated with intra-abdominal infection mortality, suggesting future models could improve subtype-specific prediction by integrating culture results. (2) ΔAUC below clinical thresholds (≥0.02) [24,25]; categorical NRI crossing zero; DSI is a complementary bedside tool, not a SOFA replacement; surgery survivorship bias addressed by removal from the primary model. (3) "Other" subtype heterogeneity (29.9%); sensitivity excluding it preserved results (AUC=0.786–0.788, DSI OR=2.15–2.22); no formal Fine-Gray models; CIF curves are descriptive only. (4) eICU SOFA heterogeneity (APS-based vs MIMIC-IV concept; median 9 vs 7; hematocrit substituted for platelets); large recalibration intercept shift (−3.935) means absolute risk predictions require local recalibration; discrimination (slope 0.952) is transportable. (5) Non-significant covariates (vasopressor P=0.14, MV P=0.45, WBC P=0.07, gender P=0.08) were absorbed by SOFA components. (6) Surveillance bias: patients receiving more frequent vital sign measurement generate more datapoints for DSI calculation, though our use of 24-hour mean values from routine ICU monitoring—where measurement frequency is standardized—partially mitigates this concern. (7) Only two authors; statistical expertise guided by TRIPOD+AI guidelines [10,32] and established references [20,24,25].
+This study has several strengths: a dual-database design with external validation across 208 hospitals; a pre-specified DAG-guided causal framework with E-value sensitivity analysis for unmeasured confounding; component decomposition demonstrating prognostic information beyond isolated components; bootstrap internal validation with dual imputation strategies (IterativeImputer and MICE); 14 sensitivity analyses covering nine bias categories; and STROBE/TRIPOD+AI-compliant reporting.
 
-### 4.5 Future Directions
+Several limitations should nevertheless be acknowledged. (1) Single-center retrospective derivation, though externally validated in 208 hospitals; selection bias from 36% exclusion (primarily lactate) enriched CC with sicker patients (mortality 19.9% vs 8.0% in excluded), addressed by MI (N=8,933, AUC=0.822, DSI OR=2.65); eICU validation also used CC (32.6% rate), creating a parallel selection bias. Microbiological data were not incorporated; Luo et al. [37] and Zhang et al. [35] showed Enterococcus and fungal infections are independently associated with intra-abdominal infection mortality, suggesting future models could improve subtype-specific prediction by integrating culture results. (2) ΔAUC below clinical thresholds (≥0.02) [24,25]; categorical NRI crossing zero; DSI is a complementary bedside tool, not a SOFA replacement; surgery survivorship bias addressed by removal from the primary model. (3) "Other" subtype heterogeneity (29.9%); sensitivity excluding it preserved results (AUC=0.786–0.788, DSI OR=2.15–2.22); no formal Fine-Gray models; CIF curves are descriptive only. (4) eICU SOFA heterogeneity (APS-based vs MIMIC-IV concept; median 9 vs 7; hematocrit substituted for platelets); large recalibration intercept shift (−3.935) means absolute risk predictions require local recalibration; discrimination (slope 0.952) is transportable. (5) Non-significant covariates (vasopressor P=0.14, MV P=0.45, WBC P=0.07, gender P=0.08) were absorbed by SOFA components. (6) Surveillance bias: patients receiving more frequent vital sign measurement generate more datapoints for DSI calculation, though our use of 24-hour mean values from routine ICU monitoring—where measurement frequency is standardized—partially mitigates this concern. (7) Only two authors; statistical expertise guided by TRIPOD+AI guidelines [10,32] and established references [20,24,25].
 
-Several directions merit investigation. First, prospective multicenter validation with standardized SOFA computation would address methodological heterogeneity between databases. Second, Fine-Gray subdistribution hazard modeling would formally quantify DSI's effect accounting for the competing risk of discharge alive. Third, DSI trajectory analysis over 24–48 hours could identify dynamic risk patterns, as Ospina-Tascón et al. [6] showed persistently high DSI tracked with increasing vasopressor requirements. Fourth, data-driven variable selection (LASSO or random forest) could complement our pre-specified approach: while pre-specification ensures clinical interpretability, LASSO may identify more parsimonious predictor sets, as shown by Zhang et al. [35]. Fifth, validation in non-US populations and ED settings would broaden generalizability, and PCA-based SI+DSI composites, as proposed by Jeon et al. [36], represent an alternative risk-dimension approach. Sixth, interventional studies assessing whether DSI-guided early vasopressor initiation, surgical timing, or post-ICU monitoring improves outcomes would establish clinical utility beyond prediction.
+Looking ahead, several directions merit investigation. First, prospective multicenter validation with standardized SOFA computation would address methodological heterogeneity between databases. Second, Fine-Gray subdistribution hazard modeling would formally quantify DSI's effect accounting for the competing risk of discharge alive. Third, DSI trajectory analysis over 24–48 hours could identify dynamic risk patterns, as Ospina-Tascón et al. [6] showed persistently high DSI tracked with increasing vasopressor requirements. Fourth, data-driven variable selection (LASSO or random forest) could complement our pre-specified approach: while pre-specification ensures clinical interpretability, LASSO may identify more parsimonious predictor sets, as shown by Zhang et al. [35]. Fifth, validation in non-US populations and ED settings would broaden generalizability, and PCA-based SI+DSI composites, as proposed by Jeon et al. [36], represent an alternative risk-dimension approach. Sixth, interventional studies assessing whether DSI-guided early vasopressor initiation, surgical timing, or post-ICU monitoring improves outcomes would establish clinical utility beyond prediction.
 
 ---
 
-## 5. Conclusions
+## Conclusions
 
 DSI is an independent predictor of in-hospital mortality in acute abdomen after SOFA adjustment (OR=2.18, 95% CI 1.79–2.65), with a dramatic quartile gradient (2.7-fold) and externally validated discrimination across 208 hospitals. Component decomposition analysis confirms that DSI captures unique prognostic information unavailable from isolated HR or DBP. Whether DSI-guided early intervention improves patient outcomes deserves prospective investigation.
 
@@ -279,3 +320,11 @@ DSI is an independent predictor of in-hospital mortality in acute abdomen after 
 39. Greenland S, Pearl J, Robins JM. Causal diagrams for epidemiologic research. Epidemiology. 1999;10(1):37-48. https://doi.org/10.1097/00001648-199901000-00008
 
 40. VanderWeele TJ, Ding P. Sensitivity analysis in observational research: introducing the E-value. Ann Intern Med. 2017;167(4):268-274. https://doi.org/10.7326/M16-2607
+
+41. Jung YT, Jeon J, Park JY, et al. Addition of lactic acid levels improves the accuracy of quick sequential organ failure assessment in predicting mortality in surgical patients with complicated intra-abdominal infections: a retrospective study. World J Emerg Surg. 2018;13:14. https://doi.org/10.1186/s13017-018-0177-9
+
+42. Sartelli M, Abu-Zidan FM, Labricciosa FM, et al. Physiological parameters for Prognosis in Abdominal Sepsis (PIPAS) Study: a WSES observational study. World J Emerg Surg. 2019;14:34. https://doi.org/10.1186/s13017-019-0235-z
+
+43. Koch C, Edinger F, Fischer T, et al. Comparison of qSOFA score, SOFA score, and SIRS criteria for the prediction of infection and mortality among surgical intermediate and intensive care unit patients. World J Emerg Surg. 2020;15:63. https://doi.org/10.1186/s13017-020-00320-5
+
+44. Park DJ, Baik SM, Hong KS, et al. Development and external validation of an artificial intelligence model for predicting mortality and prolonged intensive care unit stay in postoperative critically ill patients: a retrospective study. World J Emerg Surg. 2025;20:79. https://doi.org/10.1186/s13017-025-00650-6

@@ -1,0 +1,34 @@
+Metric,Value
+Total admissions (MIMIC-IV v3.1),546028
+Acute abdomen ICD matches,72676
+Full dataset N,8933
+CC N,5728
+CC in-hospital mortality,19.9% (1141)
+CC strict ICU mortality,13.2% (758)
+CC ICU survivors who died in hospital,383 (33.6% of hospital deaths)
+CC mean age,66.7
+CC age IQR,57-79
+CC male,56.0%
+CC vasopressor,43.6%
+CC MV,52.5%
+CC surgery,67.4%
+CC lactate median,2.0
+CC WBC median,11.6
+CC CCI median,3
+Basic baseline AUC,0.6260
+Extended baseline AUC,0.7647
+Extended+DSI AUC,0.7731
+Extended+all SI AUC,0.7765
+NRI (binary 50%),0.0320
+IDI,0.0165
+IDI P-value,4.88e-13
+DSI quartile Q1 hosp mortality,12.081005586592179
+DSI quartile Q2 hosp mortality,14.52513966480447
+DSI quartile Q3 hosp mortality,20.321229050279328
+DSI quartile Q4 hosp mortality,32.7513966480447
+DSI quartile Q1 ICU mortality,6.564245810055866
+DSI quartile Q4 ICU mortality,25.768156424581008
+Bootstrap optimism basic,0.0013
+Bootstrap optimism ext,0.0022
+Bootstrap optimism dsi,0.0022
+Bootstrap optimism all,0.0029

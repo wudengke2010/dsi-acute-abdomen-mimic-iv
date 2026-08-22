@@ -1,0 +1,31 @@
+Rank,ICD-10 Code,Frequency,Description
+1,D62,495,Acute posthemorrhagic anemia
+2,E785,417,"Hyperlipidemia, unspecified"
+3,N179,410,"Acute kidney injury, unspecified"
+4,E872,376,Acidosis
+5,Z87891,353,Personal history of pressure ulcer
+6,I10,341,Essential (primary) hypertension
+7,Z66,315,Do not resuscitate status
+8,R6521,277,Severe sepsis with septic shock
+9,J9601,265,Acute respiratory failure with hypoxia
+10,I2510,261,Atherosclerotic heart disease
+11,A419,245,"Sepsis, unspecified organism"
+12,K219,243,Gastroesophageal reflux disease
+13,Z7901,223,Long-term use of anticoagulants
+14,E871,212,Hypo-osmolality and hyponatremia
+15,Z515,207,Encounter for palliative care
+16,F329,205,"Major depressive disorder, recurrent"
+17,I4891,182,Atrial fibrillation and flutter
+18,Z781,171,Long-term use of NSAIDs
+19,N390,169,"Urinary tract infection, site not specified"
+20,D696,169,"Thrombocytopenia, unspecified"
+21,E870,168,Hyperosmolality and hypernatremia
+22,Z794,165,Long-term use of insulin
+23,E875,164,Hyperkalemia
+24,K449,161,Unspecified hernia
+25,R578,160,"Shock, unspecified"
+26,E039,156,"Hypothyroidism, unspecified"
+27,J449,149,"COPD, unspecified"
+28,Z20822,149,Contact with and exposure to COVID-19
+29,G92,146,Toxic encephalopathy
+30,F419,142,"Anxiety disorder, unspecified"

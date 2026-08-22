@@ -1,0 +1,1165 @@
+{
+  "P0_2_excluded_vs_cc": {
+    "CC": {
+      "N": 5728,
+      "Age_median": 68.0,
+      "Age_IQR": "57.0-79.0",
+      "Male_pct": 55.97067039106145,
+      "Mortality_pct": 19.919692737430168,
+      "Vasopressor_pct": 43.61033519553072,
+      "MV_pct": 52.496508379888276,
+      "Surgery_pct": 67.44064245810057,
+      "Lactate_available_pct": 100.0,
+      "WBC_available_pct": 100.0,
+      "DSI_mean_available": 100.0,
+      "Lactate_median": 2.0,
+      "SOFA_median": 7.0,
+      "SOFA_IQR": "4.0-11.0"
+    },
+    "Excluded": {
+      "N": 3205,
+      "Age_median": 69.0,
+      "Age_IQR": "57.0-80.0",
+      "Male_pct": 57.25429017160687,
+      "Mortality_pct": 8.018720748829953,
+      "Vasopressor_pct": 11.950078003120126,
+      "MV_pct": 17.254290171606865,
+      "Surgery_pct": 61.18564742589704,
+      "Lactate_available_pct": 1.40405616224649,
+      "WBC_available_pct": 94.6021840873635,
+      "DSI_mean_available": 100.0,
+      "Lactate_median": 2.2,
+      "SOFA_median": "N/A",
+      "SOFA_IQR": "N/A"
+    }
+  },
+  "P0_4_surgery_variations": {
+    "extended_with_surgery_baseline": {
+      "label": "Extended baseline (with surgery)",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.7867,
+      "Brier": 0.1282,
+      "intercept": -5.127,
+      "intercept_se": 0.2336,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "any_surgery",
+        "mechanical_ventilation",
+        "sofa"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0211,
+          "se": 0.0026,
+          "OR": 1.0213,
+          "CI_lower": 1.0161,
+          "CI_upper": 1.0265,
+          "P": "6.22e-16"
+        },
+        "gender_binary": {
+          "beta": -0.1898,
+          "se": 0.0754,
+          "OR": 0.8271,
+          "CI_lower": 0.7135,
+          "CI_upper": 0.9589,
+          "P": 0.0118
+        },
+        "CCI": {
+          "beta": 0.1316,
+          "se": 0.0124,
+          "OR": 1.1406,
+          "CI_lower": 1.1132,
+          "CI_upper": 1.1687,
+          "P": "2.83e-26"
+        },
+        "lactate_first": {
+          "beta": 0.1441,
+          "se": 0.0143,
+          "OR": 1.155,
+          "CI_lower": 1.1231,
+          "CI_upper": 1.1878,
+          "P": "7.08e-24"
+        },
+        "wbc_first": {
+          "beta": 0.0068,
+          "se": 0.0031,
+          "OR": 1.0069,
+          "CI_lower": 1.0008,
+          "CI_upper": 1.013,
+          "P": 0.0268
+        },
+        "vasopressor_use": {
+          "beta": 0.2139,
+          "se": 0.0891,
+          "OR": 1.2385,
+          "CI_lower": 1.0401,
+          "CI_upper": 1.4747,
+          "P": 0.0163
+        },
+        "any_surgery": {
+          "beta": -0.343,
+          "se": 0.0795,
+          "OR": 0.7096,
+          "CI_lower": 0.6073,
+          "CI_upper": 0.8292,
+          "P": "1.59e-05"
+        },
+        "mechanical_ventilation": {
+          "beta": 0.0837,
+          "se": 0.0999,
+          "OR": 1.0874,
+          "CI_lower": 0.894,
+          "CI_upper": 1.3226,
+          "P": 0.4019
+        },
+        "sofa": {
+          "beta": 0.1582,
+          "se": 0.0118,
+          "OR": 1.1715,
+          "CI_lower": 1.1446,
+          "CI_upper": 1.199,
+          "P": "9.42e-41"
+        }
+      }
+    },
+    "extended_with_surgery_DSI": {
+      "label": "Extended+DSI (with surgery)",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.792,
+      "Brier": 0.126,
+      "intercept": -6.2607,
+      "intercept_se": 0.2792,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "any_surgery",
+        "mechanical_ventilation",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0209,
+          "se": 0.0026,
+          "OR": 1.0212,
+          "CI_lower": 1.0159,
+          "CI_upper": 1.0264,
+          "P": "1.26e-15"
+        },
+        "gender_binary": {
+          "beta": -0.1402,
+          "se": 0.0762,
+          "OR": 0.8692,
+          "CI_lower": 0.7487,
+          "CI_upper": 1.0091,
+          "P": 0.0656
+        },
+        "CCI": {
+          "beta": 0.1305,
+          "se": 0.0125,
+          "OR": 1.1394,
+          "CI_lower": 1.1118,
+          "CI_upper": 1.1676,
+          "P": "1.53e-25"
+        },
+        "lactate_first": {
+          "beta": 0.1316,
+          "se": 0.0143,
+          "OR": 1.1407,
+          "CI_lower": 1.1092,
+          "CI_upper": 1.1731,
+          "P": "2.82e-20"
+        },
+        "wbc_first": {
+          "beta": 0.0061,
+          "se": 0.0031,
+          "OR": 1.0061,
+          "CI_lower": 1.0,
+          "CI_upper": 1.0123,
+          "P": 0.0492
+        },
+        "vasopressor_use": {
+          "beta": 0.1252,
+          "se": 0.0906,
+          "OR": 1.1334,
+          "CI_lower": 0.9491,
+          "CI_upper": 1.3535,
+          "P": 0.1666
+        },
+        "any_surgery": {
+          "beta": -0.3863,
+          "se": 0.0804,
+          "OR": 0.6796,
+          "CI_lower": 0.5805,
+          "CI_upper": 0.7956,
+          "P": "1.54e-06"
+        },
+        "mechanical_ventilation": {
+          "beta": 0.109,
+          "se": 0.1009,
+          "OR": 1.1152,
+          "CI_lower": 0.9152,
+          "CI_upper": 1.359,
+          "P": 0.2797
+        },
+        "sofa": {
+          "beta": 0.1508,
+          "se": 0.0119,
+          "OR": 1.1628,
+          "CI_lower": 1.1359,
+          "CI_upper": 1.1903,
+          "P": "1.42e-36"
+        },
+        "DSI_mean": {
+          "beta": 0.8102,
+          "se": 0.1006,
+          "OR": 2.2484,
+          "CI_lower": 1.8458,
+          "CI_upper": 2.7387,
+          "P": "8.29e-16"
+        }
+      }
+    },
+    "extended_no_surgery_baseline": {
+      "label": "Extended_no_surgery baseline",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.7853,
+      "Brier": 0.129,
+      "intercept": -5.3354,
+      "intercept_se": 0.2301,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "mechanical_ventilation",
+        "sofa"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0214,
+          "se": 0.0026,
+          "OR": 1.0217,
+          "CI_lower": 1.0165,
+          "CI_upper": 1.0269,
+          "P": "1.97e-16"
+        },
+        "gender_binary": {
+          "beta": -0.1813,
+          "se": 0.0752,
+          "OR": 0.8342,
+          "CI_lower": 0.7199,
+          "CI_upper": 0.9666,
+          "P": 0.0159
+        },
+        "CCI": {
+          "beta": 0.1293,
+          "se": 0.0124,
+          "OR": 1.1381,
+          "CI_lower": 1.1108,
+          "CI_upper": 1.166,
+          "P": "1.32e-25"
+        },
+        "lactate_first": {
+          "beta": 0.1442,
+          "se": 0.0142,
+          "OR": 1.1551,
+          "CI_lower": 1.1234,
+          "CI_upper": 1.1878,
+          "P": "3.81e-24"
+        },
+        "wbc_first": {
+          "beta": 0.0063,
+          "se": 0.0031,
+          "OR": 1.0063,
+          "CI_lower": 1.0002,
+          "CI_upper": 1.0124,
+          "P": 0.0416
+        },
+        "vasopressor_use": {
+          "beta": 0.2177,
+          "se": 0.0888,
+          "OR": 1.2432,
+          "CI_lower": 1.0447,
+          "CI_upper": 1.4794,
+          "P": 0.0142
+        },
+        "mechanical_ventilation": {
+          "beta": 0.0575,
+          "se": 0.0994,
+          "OR": 1.0592,
+          "CI_lower": 0.8717,
+          "CI_upper": 1.2872,
+          "P": 0.5628
+        },
+        "sofa": {
+          "beta": 0.1558,
+          "se": 0.0118,
+          "OR": 1.1686,
+          "CI_lower": 1.1419,
+          "CI_upper": 1.1958,
+          "P": "4.83e-40"
+        }
+      }
+    },
+    "extended_no_surgery_DSI": {
+      "label": "Extended_no_surgery+DSI",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.7902,
+      "Brier": 0.127,
+      "intercept": -6.4548,
+      "intercept_se": 0.2778,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "mechanical_ventilation",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0214,
+          "se": 0.0026,
+          "OR": 1.0216,
+          "CI_lower": 1.0164,
+          "CI_upper": 1.0269,
+          "P": "2.98e-16"
+        },
+        "gender_binary": {
+          "beta": -0.1314,
+          "se": 0.0759,
+          "OR": 0.8769,
+          "CI_lower": 0.7557,
+          "CI_upper": 1.0176,
+          "P": 0.0836
+        },
+        "CCI": {
+          "beta": 0.128,
+          "se": 0.0124,
+          "OR": 1.1365,
+          "CI_lower": 1.1092,
+          "CI_upper": 1.1646,
+          "P": "8.10e-25"
+        },
+        "lactate_first": {
+          "beta": 0.1324,
+          "se": 0.0142,
+          "OR": 1.1416,
+          "CI_lower": 1.1103,
+          "CI_upper": 1.1738,
+          "P": "1.14e-20"
+        },
+        "wbc_first": {
+          "beta": 0.0055,
+          "se": 0.0031,
+          "OR": 1.0056,
+          "CI_lower": 0.9995,
+          "CI_upper": 1.0117,
+          "P": 0.0736
+        },
+        "vasopressor_use": {
+          "beta": 0.1325,
+          "se": 0.0902,
+          "OR": 1.1417,
+          "CI_lower": 0.9567,
+          "CI_upper": 1.3625,
+          "P": 0.1417
+        },
+        "mechanical_ventilation": {
+          "beta": 0.0754,
+          "se": 0.1002,
+          "OR": 1.0783,
+          "CI_lower": 0.886,
+          "CI_upper": 1.3124,
+          "P": 0.4519
+        },
+        "sofa": {
+          "beta": 0.1486,
+          "se": 0.0119,
+          "OR": 1.1602,
+          "CI_lower": 1.1336,
+          "CI_upper": 1.1875,
+          "P": "4.83e-36"
+        },
+        "DSI_mean": {
+          "beta": 0.7791,
+          "se": 0.1002,
+          "OR": 2.1794,
+          "CI_lower": 1.7908,
+          "CI_upper": 2.6524,
+          "P": "7.59e-15"
+        }
+      }
+    },
+    "extended_surgery24h_baseline": {
+      "label": "Extended_surgery24h baseline",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.7855,
+      "Brier": 0.129,
+      "intercept": -5.3309,
+      "intercept_se": 0.2301,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "surgery_24h",
+        "mechanical_ventilation",
+        "sofa"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0214,
+          "se": 0.0026,
+          "OR": 1.0217,
+          "CI_lower": 1.0165,
+          "CI_upper": 1.0269,
+          "P": "1.97e-16"
+        },
+        "gender_binary": {
+          "beta": -0.1825,
+          "se": 0.0752,
+          "OR": 0.8332,
+          "CI_lower": 0.719,
+          "CI_upper": 0.9655,
+          "P": 0.0152
+        },
+        "CCI": {
+          "beta": 0.1297,
+          "se": 0.0124,
+          "OR": 1.1385,
+          "CI_lower": 1.1112,
+          "CI_upper": 1.1664,
+          "P": "1.02e-25"
+        },
+        "lactate_first": {
+          "beta": 0.144,
+          "se": 0.0142,
+          "OR": 1.1549,
+          "CI_lower": 1.1231,
+          "CI_upper": 1.1875,
+          "P": "4.43e-24"
+        },
+        "wbc_first": {
+          "beta": 0.0062,
+          "se": 0.0031,
+          "OR": 1.0062,
+          "CI_lower": 1.0001,
+          "CI_upper": 1.0123,
+          "P": 0.0446
+        },
+        "vasopressor_use": {
+          "beta": 0.2132,
+          "se": 0.0889,
+          "OR": 1.2377,
+          "CI_lower": 1.0399,
+          "CI_upper": 1.4731,
+          "P": 0.0164
+        },
+        "surgery_24h": {
+          "beta": -0.1532,
+          "se": 0.1673,
+          "OR": 0.8579,
+          "CI_lower": 0.618,
+          "CI_upper": 1.1909,
+          "P": 0.3598
+        },
+        "mechanical_ventilation": {
+          "beta": 0.0652,
+          "se": 0.0995,
+          "OR": 1.0674,
+          "CI_lower": 0.8782,
+          "CI_upper": 1.2974,
+          "P": 0.5122
+        },
+        "sofa": {
+          "beta": 0.156,
+          "se": 0.0118,
+          "OR": 1.1689,
+          "CI_lower": 1.1422,
+          "CI_upper": 1.1961,
+          "P": "4.20e-40"
+        }
+      }
+    },
+    "extended_surgery24h_DSI": {
+      "label": "Extended_surgery24h+DSI",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.7903,
+      "Brier": 0.127,
+      "intercept": -6.4415,
+      "intercept_se": 0.2777,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "surgery_24h",
+        "mechanical_ventilation",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0214,
+          "se": 0.0026,
+          "OR": 1.0216,
+          "CI_lower": 1.0164,
+          "CI_upper": 1.0269,
+          "P": "3.04e-16"
+        },
+        "gender_binary": {
+          "beta": -0.1317,
+          "se": 0.0759,
+          "OR": 0.8766,
+          "CI_lower": 0.7554,
+          "CI_upper": 1.0173,
+          "P": 0.0828
+        },
+        "CCI": {
+          "beta": 0.1283,
+          "se": 0.0124,
+          "OR": 1.1369,
+          "CI_lower": 1.1095,
+          "CI_upper": 1.165,
+          "P": "6.54e-25"
+        },
+        "lactate_first": {
+          "beta": 0.1324,
+          "se": 0.0142,
+          "OR": 1.1416,
+          "CI_lower": 1.1103,
+          "CI_upper": 1.1738,
+          "P": "1.12e-20"
+        },
+        "wbc_first": {
+          "beta": 0.0055,
+          "se": 0.0031,
+          "OR": 1.0055,
+          "CI_lower": 0.9994,
+          "CI_upper": 1.0116,
+          "P": 0.0777
+        },
+        "vasopressor_use": {
+          "beta": 0.1327,
+          "se": 0.0903,
+          "OR": 1.1419,
+          "CI_lower": 0.9568,
+          "CI_upper": 1.3629,
+          "P": 0.1415
+        },
+        "surgery_24h": {
+          "beta": -0.1249,
+          "se": 0.1689,
+          "OR": 0.8826,
+          "CI_lower": 0.6338,
+          "CI_upper": 1.229,
+          "P": 0.4597
+        },
+        "mechanical_ventilation": {
+          "beta": 0.0822,
+          "se": 0.1003,
+          "OR": 1.0857,
+          "CI_lower": 0.8919,
+          "CI_upper": 1.3216,
+          "P": 0.4124
+        },
+        "sofa": {
+          "beta": 0.1486,
+          "se": 0.0119,
+          "OR": 1.1602,
+          "CI_lower": 1.1335,
+          "CI_upper": 1.1875,
+          "P": "5.40e-36"
+        },
+        "DSI_mean": {
+          "beta": 0.7727,
+          "se": 0.1002,
+          "OR": 2.1655,
+          "CI_lower": 1.7793,
+          "CI_upper": 2.6356,
+          "P": "1.27e-14"
+        }
+      }
+    }
+  },
+  "P1_4_parsimonious": {
+    "parsimonious_baseline": {
+      "label": "Parsimonious baseline",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.784,
+      "Brier": 0.129,
+      "intercept": -5.3508,
+      "intercept_se": 0.2294,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "sofa"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0219,
+          "se": 0.0026,
+          "OR": 1.0222,
+          "CI_lower": 1.017,
+          "CI_upper": 1.0274,
+          "P": "3.18e-17"
+        },
+        "gender_binary": {
+          "beta": -0.1854,
+          "se": 0.0751,
+          "OR": 0.8308,
+          "CI_lower": 0.717,
+          "CI_upper": 0.9626,
+          "P": 0.0136
+        },
+        "CCI": {
+          "beta": 0.1255,
+          "se": 0.0121,
+          "OR": 1.1337,
+          "CI_lower": 1.107,
+          "CI_upper": 1.161,
+          "P": "5.08e-25"
+        },
+        "lactate_first": {
+          "beta": 0.1406,
+          "se": 0.0141,
+          "OR": 1.1509,
+          "CI_lower": 1.1194,
+          "CI_upper": 1.1833,
+          "P": "2.84e-23"
+        },
+        "wbc_first": {
+          "beta": 0.0066,
+          "se": 0.0031,
+          "OR": 1.0067,
+          "CI_lower": 1.0006,
+          "CI_upper": 1.0127,
+          "P": 0.0304
+        },
+        "sofa": {
+          "beta": 0.1727,
+          "se": 0.0086,
+          "OR": 1.1885,
+          "CI_lower": 1.1686,
+          "CI_upper": 1.2088,
+          "P": "2.48e-89"
+        }
+      }
+    },
+    "parsimonious_DSI": {
+      "label": "Parsimonious+DSI (age+CCI+lactate+WBC+SOFA+DSI)",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.7894,
+      "Brier": 0.1269,
+      "intercept": -6.4825,
+      "intercept_se": 0.2756,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0217,
+          "se": 0.0026,
+          "OR": 1.0219,
+          "CI_lower": 1.0167,
+          "CI_upper": 1.0271,
+          "P": "9.82e-17"
+        },
+        "gender_binary": {
+          "beta": -0.1324,
+          "se": 0.0759,
+          "OR": 0.876,
+          "CI_lower": 0.7549,
+          "CI_upper": 1.0165,
+          "P": 0.0811
+        },
+        "CCI": {
+          "beta": 0.1248,
+          "se": 0.0122,
+          "OR": 1.1329,
+          "CI_lower": 1.1061,
+          "CI_upper": 1.1604,
+          "P": "1.74e-24"
+        },
+        "lactate_first": {
+          "beta": 0.1295,
+          "se": 0.0141,
+          "OR": 1.1383,
+          "CI_lower": 1.1072,
+          "CI_upper": 1.1702,
+          "P": "4.28e-20"
+        },
+        "wbc_first": {
+          "beta": 0.0057,
+          "se": 0.0031,
+          "OR": 1.0057,
+          "CI_lower": 0.9997,
+          "CI_upper": 1.0118,
+          "P": 0.0631
+        },
+        "sofa": {
+          "beta": 0.1613,
+          "se": 0.0088,
+          "OR": 1.1751,
+          "CI_lower": 1.1551,
+          "CI_upper": 1.1954,
+          "P": "9.76e-76"
+        },
+        "DSI_mean": {
+          "beta": 0.7959,
+          "se": 0.0994,
+          "OR": 2.2164,
+          "CI_lower": 1.8241,
+          "CI_upper": 2.6931,
+          "P": "1.16e-15"
+        }
+      }
+    },
+    "extended_no_VMV_baseline": {
+      "label": "Extended_no_VMV+DSI (no vasopressor/MV)",
+      "N": 5728,
+      "n_events": 1141,
+      "AUC": 0.7911,
+      "Brier": 0.1259,
+      "intercept": -6.2778,
+      "intercept_se": 0.2772,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "any_surgery",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0212,
+          "se": 0.0026,
+          "OR": 1.0214,
+          "CI_lower": 1.0162,
+          "CI_upper": 1.0266,
+          "P": "4.85e-16"
+        },
+        "gender_binary": {
+          "beta": -0.1401,
+          "se": 0.0761,
+          "OR": 0.8693,
+          "CI_lower": 0.7488,
+          "CI_upper": 1.0092,
+          "P": 0.0659
+        },
+        "CCI": {
+          "beta": 0.1266,
+          "se": 0.0123,
+          "OR": 1.1349,
+          "CI_lower": 1.108,
+          "CI_upper": 1.1626,
+          "P": "5.70e-25"
+        },
+        "lactate_first": {
+          "beta": 0.1284,
+          "se": 0.0142,
+          "OR": 1.137,
+          "CI_lower": 1.1058,
+          "CI_upper": 1.169,
+          "P": "1.26e-19"
+        },
+        "wbc_first": {
+          "beta": 0.0063,
+          "se": 0.0031,
+          "OR": 1.0063,
+          "CI_lower": 1.0002,
+          "CI_upper": 1.0124,
+          "P": 0.0424
+        },
+        "any_surgery": {
+          "beta": -0.382,
+          "se": 0.0801,
+          "OR": 0.6825,
+          "CI_lower": 0.5833,
+          "CI_upper": 0.7986,
+          "P": "1.87e-06"
+        },
+        "sofa": {
+          "beta": 0.1653,
+          "se": 0.0089,
+          "OR": 1.1798,
+          "CI_lower": 1.1595,
+          "CI_upper": 1.2004,
+          "P": "7.44e-78"
+        },
+        "DSI_mean": {
+          "beta": 0.823,
+          "se": 0.0998,
+          "OR": 2.2772,
+          "CI_lower": 1.8727,
+          "CI_upper": 2.7692,
+          "P": "1.63e-16"
+        }
+      }
+    }
+  },
+  "P0_5_subtype_exclusions": {
+    "excl_other_DSI": {
+      "label": "Extended+DSI excluding Other",
+      "N": 4016,
+      "n_events": 852,
+      "AUC": 0.7879,
+      "Brier": 0.133,
+      "intercept": -6.1029,
+      "intercept_se": 0.3208,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "any_surgery",
+        "mechanical_ventilation",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0212,
+          "se": 0.003,
+          "OR": 1.0215,
+          "CI_lower": 1.0155,
+          "CI_upper": 1.0275,
+          "P": "1.25e-12"
+        },
+        "gender_binary": {
+          "beta": -0.1979,
+          "se": 0.0888,
+          "OR": 0.8204,
+          "CI_lower": 0.6894,
+          "CI_upper": 0.9765,
+          "P": 0.0259
+        },
+        "CCI": {
+          "beta": 0.1402,
+          "se": 0.0149,
+          "OR": 1.1505,
+          "CI_lower": 1.1174,
+          "CI_upper": 1.1845,
+          "P": "4.52e-21"
+        },
+        "lactate_first": {
+          "beta": 0.1276,
+          "se": 0.0168,
+          "OR": 1.1361,
+          "CI_lower": 1.0993,
+          "CI_upper": 1.1741,
+          "P": "2.94e-14"
+        },
+        "wbc_first": {
+          "beta": 0.0077,
+          "se": 0.0039,
+          "OR": 1.0078,
+          "CI_lower": 1.0001,
+          "CI_upper": 1.0155,
+          "P": 0.0476
+        },
+        "vasopressor_use": {
+          "beta": 0.0748,
+          "se": 0.1064,
+          "OR": 1.0776,
+          "CI_lower": 0.8748,
+          "CI_upper": 1.3275,
+          "P": 0.4821
+        },
+        "any_surgery": {
+          "beta": -0.3688,
+          "se": 0.0942,
+          "OR": 0.6915,
+          "CI_lower": 0.575,
+          "CI_upper": 0.8317,
+          "P": "9.00e-05"
+        },
+        "mechanical_ventilation": {
+          "beta": 0.1186,
+          "se": 0.1177,
+          "OR": 1.126,
+          "CI_lower": 0.894,
+          "CI_upper": 1.418,
+          "P": 0.3134
+        },
+        "sofa": {
+          "beta": 0.143,
+          "se": 0.0139,
+          "OR": 1.1537,
+          "CI_lower": 1.1227,
+          "CI_upper": 1.1855,
+          "P": "6.59e-25"
+        },
+        "DSI_mean": {
+          "beta": 0.7994,
+          "se": 0.1164,
+          "OR": 2.2242,
+          "CI_lower": 1.7703,
+          "CI_upper": 2.7944,
+          "P": "6.63e-12"
+        }
+      }
+    },
+    "excl_other_no_surgery_DSI": {
+      "label": "Extended_no_surgery+DSI excl Other",
+      "N": 4016,
+      "n_events": 852,
+      "AUC": 0.786,
+      "Brier": 0.1339,
+      "intercept": -6.2818,
+      "intercept_se": 0.3193,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "mechanical_ventilation",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0216,
+          "se": 0.003,
+          "OR": 1.0218,
+          "CI_lower": 1.0158,
+          "CI_upper": 1.0278,
+          "P": "5.71e-13"
+        },
+        "gender_binary": {
+          "beta": -0.1841,
+          "se": 0.0885,
+          "OR": 0.8319,
+          "CI_lower": 0.6994,
+          "CI_upper": 0.9894,
+          "P": 0.0375
+        },
+        "CCI": {
+          "beta": 0.1379,
+          "se": 0.0148,
+          "OR": 1.1479,
+          "CI_lower": 1.115,
+          "CI_upper": 1.1817,
+          "P": "1.47e-20"
+        },
+        "lactate_first": {
+          "beta": 0.1269,
+          "se": 0.0167,
+          "OR": 1.1353,
+          "CI_lower": 1.0987,
+          "CI_upper": 1.1732,
+          "P": "3.33e-14"
+        },
+        "wbc_first": {
+          "beta": 0.0071,
+          "se": 0.0039,
+          "OR": 1.0072,
+          "CI_lower": 0.9995,
+          "CI_upper": 1.0149,
+          "P": 0.0659
+        },
+        "vasopressor_use": {
+          "beta": 0.0797,
+          "se": 0.1059,
+          "OR": 1.083,
+          "CI_lower": 0.8799,
+          "CI_upper": 1.3329,
+          "P": 0.4518
+        },
+        "mechanical_ventilation": {
+          "beta": 0.0909,
+          "se": 0.1169,
+          "OR": 1.0952,
+          "CI_lower": 0.8708,
+          "CI_upper": 1.3773,
+          "P": 0.4369
+        },
+        "sofa": {
+          "beta": 0.1411,
+          "se": 0.0138,
+          "OR": 1.1516,
+          "CI_lower": 1.1209,
+          "CI_upper": 1.1831,
+          "P": "1.27e-24"
+        },
+        "DSI_mean": {
+          "beta": 0.7668,
+          "se": 0.1158,
+          "OR": 2.1529,
+          "CI_lower": 1.7157,
+          "CI_upper": 2.7015,
+          "P": "3.57e-11"
+        }
+      }
+    },
+    "primary_subtypes_only_DSI": {
+      "label": "Extended+DSI primary subtypes only",
+      "N": 4016,
+      "n_events": 852,
+      "AUC": 0.7879,
+      "Brier": 0.133,
+      "intercept": -6.1029,
+      "intercept_se": 0.3208,
+      "predictors": [
+        "age_at_admission",
+        "gender_binary",
+        "CCI",
+        "lactate_first",
+        "wbc_first",
+        "vasopressor_use",
+        "any_surgery",
+        "mechanical_ventilation",
+        "sofa",
+        "DSI_mean"
+      ],
+      "coefficients": {
+        "age_at_admission": {
+          "beta": 0.0212,
+          "se": 0.003,
+          "OR": 1.0215,
+          "CI_lower": 1.0155,
+          "CI_upper": 1.0275,
+          "P": "1.25e-12"
+        },
+        "gender_binary": {
+          "beta": -0.1979,
+          "se": 0.0888,
+          "OR": 0.8204,
+          "CI_lower": 0.6894,
+          "CI_upper": 0.9765,
+          "P": 0.0259
+        },
+        "CCI": {
+          "beta": 0.1402,
+          "se": 0.0149,
+          "OR": 1.1505,
+          "CI_lower": 1.1174,
+          "CI_upper": 1.1845,
+          "P": "4.52e-21"
+        },
+        "lactate_first": {
+          "beta": 0.1276,
+          "se": 0.0168,
+          "OR": 1.1361,
+          "CI_lower": 1.0993,
+          "CI_upper": 1.1741,
+          "P": "2.94e-14"
+        },
+        "wbc_first": {
+          "beta": 0.0077,
+          "se": 0.0039,
+          "OR": 1.0078,
+          "CI_lower": 1.0001,
+          "CI_upper": 1.0155,
+          "P": 0.0476
+        },
+        "vasopressor_use": {
+          "beta": 0.0748,
+          "se": 0.1064,
+          "OR": 1.0776,
+          "CI_lower": 0.8748,
+          "CI_upper": 1.3275,
+          "P": 0.4821
+        },
+        "any_surgery": {
+          "beta": -0.3688,
+          "se": 0.0942,
+          "OR": 0.6915,
+          "CI_lower": 0.575,
+          "CI_upper": 0.8317,
+          "P": "9.00e-05"
+        },
+        "mechanical_ventilation": {
+          "beta": 0.1186,
+          "se": 0.1177,
+          "OR": 1.126,
+          "CI_lower": 0.894,
+          "CI_upper": 1.418,
+          "P": 0.3134
+        },
+        "sofa": {
+          "beta": 0.143,
+          "se": 0.0139,
+          "OR": 1.1537,
+          "CI_lower": 1.1227,
+          "CI_upper": 1.1855,
+          "P": "6.59e-25"
+        },
+        "DSI_mean": {
+          "beta": 0.7994,
+          "se": 0.1164,
+          "OR": 2.2242,
+          "CI_lower": 1.7703,
+          "CI_upper": 2.7944,
+          "P": "6.63e-12"
+        }
+      }
+    }
+  },
+  "P0_6_eicu_unrecalibrated": {
+    "extended_brier": 0.3827,
+    "extended_hl_p": 0.0,
+    "extended_dsi_brier": 0.5882,
+    "extended_dsi_hl_p": 0.0
+  },
+  "P0_6_eicu_recalibrated": {
+    "extended_brier": 0.128,
+    "extended_hl_p": 0.353,
+    "extended_dsi_brier": 0.1258,
+    "extended_dsi_hl_p": 0.266,
+    "recal_intercept_shift_ext": -2.697,
+    "recal_slope_ext": 0.943,
+    "recal_intercept_shift_dsi": -3.935,
+    "recal_slope_dsi": 0.952
+  },
+  "delta_auc_summary": {
+    "no_surgery": 0.0049000000000000155,
+    "with_surgery": 0.005300000000000082,
+    "parsimonious": 0.00539999999999996,
+    "surgery_24h": 0.0048000000000000265
+  }
+}

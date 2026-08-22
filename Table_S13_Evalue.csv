@@ -1,0 +1,11 @@
+Parameter,Value,E-value,Interpretation
+DSI OR (point estimate),2.18,3.78,Unmeasured confounder RR>=3.8 needed to nullify
+DSI OR (CI lower bound),1.79,2.98,Unmeasured confounder RR>=3.0 needed to shift CI to null
+DSI OR (CI upper bound),2.65,,
+,,,
+Benchmark,OR in model,,
+SOFA (per point),1.16,,Reference
+Lactate (per mmol/L),1.14,,Reference
+CCI (per point),1.14,,Reference
+,,,
+Conclusion,,,"E=3.8 indicates substantial robustness. Unmeasured confounder would need RR>3.8 — exceeding established strong predictors (SOFA, lactate) — to explain away DSI."

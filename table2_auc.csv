@@ -1,0 +1,23 @@
+Outcome,Predictor,AUC,95% CI,Best Cut-off,Sensitivity,Specificity,Youden J
+ICU Mortality,SI (first),0.583,0.564-0.601,0.77,0.617,0.509,0.126
+ICU Mortality,SI (worst),0.612,0.593-0.631,0.99,0.562,0.613,0.175
+ICU Mortality,SI (mean),0.626,0.606-0.646,0.84,0.511,0.682,0.193
+ICU Mortality,MSI (first),0.581,0.561-0.600,1.19,0.561,0.574,0.135
+ICU Mortality,MSI (worst),0.610,0.590-0.628,1.51,0.540,0.626,0.166
+ICU Mortality,MSI (mean),0.632,0.612-0.652,1.25,0.518,0.689,0.208
+ICU Mortality,DSI (first),0.582,0.562-0.599,1.26,0.773,0.350,0.122
+ICU Mortality,DSI (worst),0.606,0.587-0.625,2.02,0.463,0.700,0.163
+ICU Mortality,DSI (mean),0.637,0.619-0.655,1.53,0.559,0.657,0.215
+ICU Mortality,Age-SI (first),0.592,0.574-0.611,5.36,0.557,0.586,0.143
+ICU Mortality,Age-SI (worst),0.617,0.596-0.636,6.01,0.703,0.477,0.180
+Prolonged ICU Stay (>3d),SI (first),0.558,0.543-0.571,0.82,0.459,0.634,0.093
+Prolonged ICU Stay (>3d),SI (worst),0.620,0.607-0.633,1.01,0.516,0.675,0.191
+Prolonged ICU Stay (>3d),SI (mean),0.590,0.576-0.606,0.82,0.478,0.666,0.145
+Prolonged ICU Stay (>3d),MSI (first),0.541,0.526-0.555,1.20,0.480,0.601,0.081
+Prolonged ICU Stay (>3d),MSI (worst),0.601,0.587-0.615,1.49,0.514,0.649,0.162
+Prolonged ICU Stay (>3d),MSI (mean),0.576,0.561-0.589,1.14,0.590,0.531,0.121
+Prolonged ICU Stay (>3d),DSI (first),0.546,0.531-0.559,1.34,0.629,0.449,0.078
+Prolonged ICU Stay (>3d),DSI (worst),0.598,0.584-0.611,1.86,0.543,0.605,0.148
+Prolonged ICU Stay (>3d),DSI (mean),0.597,0.584-0.611,1.41,0.627,0.520,0.146
+Prolonged ICU Stay (>3d),Age-SI (first),0.521,0.507-0.535,4.91,0.577,0.465,0.041
+Prolonged ICU Stay (>3d),Age-SI (worst),0.573,0.559-0.586,6.13,0.601,0.514,0.114

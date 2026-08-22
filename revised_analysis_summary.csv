@@ -1,0 +1,27 @@
+metric,value
+N (CC),5728
+Mortality (%),19.9%
+SOFA median [IQR],7.0 [4-11]
+Extended+SOFA AUC,0.7867
+Extended+SOFA+DSI AUC,0.7920
+Delta AUC,0.0053
+Categorical NRI,0.0080
+NRI 95% CI lo,-0.0093
+NRI 95% CI hi,0.0435
+Category-free NRI,0.2520
+CF-NRI 95% CI lo,0.1827
+CF-NRI 95% CI hi,0.3310
+IDI,0.0128
+IDI 95% CI lo,0.0072
+IDI 95% CI hi,0.0198
+DSI OR,2.266
+DSI OR 95% CI lo,1.860
+DSI OR 95% CI hi,2.760
+DSI P,4.53e-16
+Surgery ≤24h AUC (Extended+DSI),0.7902
+Surgery ≤24h DSI OR,2.191
+Apparent AUC (bootstrap val),0.7902
+Optimism,0.0020
+Corrected AUC,0.7882
+MI AUC mean,0.8224
+MI DSI OR mean,2.653

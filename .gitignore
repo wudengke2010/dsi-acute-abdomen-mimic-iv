@@ -1,25 +1,39 @@
-# Data files (large, contain sensitive MIMIC data)
+# Patient-level data files (restricted by PhysioNet DUA - DO NOT publish)
 *.csv
 *.csv.gz
 *.json
 *.xlsx
 
-# Generated figures
+# Aggregate result tables (safe to publish)
+!Table_S*.csv
+!table*.csv
+!DSI_diagnostic_performance.csv
+!revised_analysis_summary.csv
+
+# Aggregate statistics files (safe to publish)
+!v6_revision_statistics.json
+!component_decomposition_results.json
+!eicu_external_validation_results.json
+
+# Generated figures (intermediate versions, excluded by default)
 *.png
 *.pdf
 *.svg
 *.eps
 
+# Published figures v7 (safe to publish)
+!figures_v7/*.png
+!figures_v7/*.pdf
+
 # Generated DOCX
 *.docx
 
-# Figure directories
+# Intermediate figure directories
 figures/
 figures_corrected/
 figures_publication/
 figures_sci/
 figures_v5/
-figures_v7/
 
 # Python cache
 __pycache__/
@@ -31,3 +45,5 @@ __pycache__/
 # Reference papers (copyrighted)
 ref_papers/
 
+# Extracted full text of published papers (copyrighted, drafting notes only)
+wjes_study_*.txt

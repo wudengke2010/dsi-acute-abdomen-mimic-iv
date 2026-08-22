@@ -1,0 +1,13 @@
+Characteristic,Complete-Case (N=5,728),Excluded (N=3,205),Difference
+"Age, years (median [IQR])",68.0 [57.0-79.0],69.0 [57.0-80.0],Similar
+"Male, n (%)",3206 (56.0%),1839 (57.3%),Similar
+"In-hospital mortality, n (%)",1141 (19.9%),257 (8.0%),CC 2.5x higher
+"ICU mortality (strict), n (%))",758 (13.2%),Not computed,CC enriched
+"Vasopressor use, n (%)",2498 (43.6%),383 (12.0%),CC 3.6x higher
+"Mechanical ventilation, n (%)",3007 (52.5%),554 (17.3%),CC 3.0x higher
+"Surgery, n (%)",3863 (67.4%),1959 (61.2%),CC slightly higher
+"Lactate available, n (%)",5728 (100.0%),45 (1.4%),Primary exclusion driver
+"WBC available, n (%)",5728 (100.0%),3031 (94.6%),Mostly available
+"DSI available, n (%)",5728 (100.0%),3205 (100.0%),Fully available
+"Lactate median (mmol/L)",2.0 [1.3-3.2],2.2 (where available),Similar
+"SOFA (median [IQR])",7.0 [4.0-11.0],Not available (no lactate),CC only

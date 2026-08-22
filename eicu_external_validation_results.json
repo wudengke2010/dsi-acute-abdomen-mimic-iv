@@ -1,0 +1,87 @@
+{
+  "cohort": {
+    "total_abd_stays": 17576,
+    "cc_n": 5755,
+    "cc_mortality_pct": 20.0,
+    "cc_mortality_n": 1152,
+    "cc_age_median": 66.0,
+    "cc_age_iqr": [
+      55.0,
+      78.0
+    ],
+    "cc_male_pct": 56.4,
+    "cc_sofa_median": 9.0,
+    "cc_sofa_iqr": [
+      7.0,
+      12.0
+    ],
+    "cc_dsi_median": 1.546,
+    "cc_lactate_coverage_pct": 100.0,
+    "mimic_iv_comparison": {
+      "mimic_cc_n": 5728,
+      "mimic_mortality_pct": 19.9,
+      "mimic_sofa_median": 7
+    }
+  },
+  "auc": {
+    "extended": 0.785,
+    "extended_dsi": 0.792,
+    "delta_auc": 0.0074,
+    "delong_z": 3.011,
+    "delong_p": 0.0026,
+    "mimic_iv_comparison": {
+      "mimic_ext_auc": 0.787,
+      "mimic_ext_dsi_auc": 0.792,
+      "mimic_delta_auc": 0.005,
+      "mimic_delong_p": 0.012
+    }
+  },
+  "calibration_raw": {
+    "extended_brier": 0.3827,
+    "extended_hl_p": 0.0,
+    "extended_dsi_brier": 0.5882,
+    "extended_dsi_hl_p": 0.0
+  },
+  "calibration_recalibrated": {
+    "extended_brier": 0.128,
+    "extended_hl_p": 0.353,
+    "extended_dsi_brier": 0.1258,
+    "extended_dsi_hl_p": 0.266,
+    "recal_intercept_shift_ext": -2.697,
+    "recal_slope_ext": 0.943,
+    "recal_intercept_shift_dsi": -3.935,
+    "recal_slope_dsi": 0.952
+  },
+  "nri_idi": {
+    "nri_cf": 0.277,
+    "nri_cf_se": 0.023,
+    "nri_cf_p": 0.0,
+    "nri_e": 0.062,
+    "nri_ne": 0.214,
+    "idi": 0.014,
+    "idi_se": 0.002,
+    "idi_p": 0.0
+  },
+  "dsi_quartile_mortality": {
+    "Q1": {
+      "n": 1294,
+      "deaths": 155,
+      "rate_pct": 12.0
+    },
+    "Q2": {
+      "n": 1289,
+      "deaths": 179,
+      "rate_pct": 13.9
+    },
+    "Q3": {
+      "n": 1495,
+      "deaths": 256,
+      "rate_pct": 17.1
+    },
+    "Q4": {
+      "n": 1677,
+      "deaths": 562,
+      "rate_pct": 33.5
+    }
+  }
+}
