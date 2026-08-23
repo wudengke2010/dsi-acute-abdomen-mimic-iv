@@ -2,9 +2,9 @@
 
 **Diastolic Shock Index as an Independent Predictor of In-Hospital Mortality in Critically Ill Patients with Acute Abdomen: A Retrospective Cohort Study with External Validation**
 
-Jiqiang Liu†, Dengke Wu\*
+Yuzhong Cai†, Jiqiang Liu, Dengke Wu\*
 
-Department of Emergency Medicine, and Emergency Medicine and Difficult Diseases Institute, The Second Xiangya Hospital of Central South University, Changsha 410011, Hunan, China
+Department of Emergency Medicine, Second Xiangya Hospital, Central South University, Changsha 410011, Hunan, China; Emergency Medicine and Difficult Diseases Institute, The Second Xiangya Hospital of Central South University, Changsha, China
 
 ---
 

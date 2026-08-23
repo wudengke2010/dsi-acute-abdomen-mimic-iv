@@ -40,15 +40,22 @@ We believe this study will be of significant interest to the readership of *Worl
 
 Sincerely,
 
-**Dengke Wu, MD** (Corresponding Author)
-Department of Emergency Medicine, and Emergency Medicine and Difficult Diseases Institute
-The Second Xiangya Hospital of Central South University
-Changsha 410011, Hunan, China
+**Dengke Wu, MD, PhD** (Corresponding Author)
+Department of Emergency Medicine, Second Xiangya Hospital, Central South University
+Emergency Medicine and Difficult Diseases Institute, The Second Xiangya Hospital of Central South University
+139 Renmin Middle Road, Changsha 410011, Hunan, China
 Email: wudk2010@csu.edu.cn
 ORCID: 0000-0003-4101-8461
 
-**Jiqiang Liu**
+**Yuzhong Cai, MD** (First Author)
 Department of Emergency Medicine
-The Second Xiangya Hospital of Central South University
+Second Xiangya Hospital of Central South University
+Changsha 410011, Hunan, China
+Email: caiyuzhong@csu.edu.cn
+ORCID: 0009-0004-3425-3898
+
+**Jiqiang Liu, MD**
+Department of Emergency Medicine
+Second Xiangya Hospital of Central South University
 Changsha 410011, Hunan, China
 ORCID: 0009-0000-9884-3089

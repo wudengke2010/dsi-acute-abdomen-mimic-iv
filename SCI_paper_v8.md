@@ -1,14 +1,16 @@
 # Diastolic Shock Index as an Independent Predictor of In-Hospital Mortality in Critically Ill Patients with Acute Abdomen: A Retrospective Cohort Study with External Validation
 
-**Jiqiang Liu** [1]†, **Dengke Wu** [1]*
+**Yuzhong Cai** [1]†, **Jiqiang Liu** [1], **Dengke Wu** [1,2]*
 
-ORCID Jiqiang Liu: 0009-0000-9884-3089; ORCID Dengke Wu: 0000-0003-4101-8461
+ORCID Yuzhong Cai: 0009-0004-3425-3898; ORCID Jiqiang Liu: 0009-0000-9884-3089; ORCID Dengke Wu: 0000-0003-4101-8461
 
-[1] Department of Emergency Medicine, and Emergency Medicine and Difficult Diseases Institute, The Second Xiangya Hospital of Central South University, Changsha 410011, Hunan, China
+[1] Department of Emergency Medicine, Second Xiangya Hospital, Central South University, Changsha 410011, Hunan, China
 
-† First author.
+[2] Emergency Medicine and Difficult Diseases Institute, The Second Xiangya Hospital of Central South University, Changsha, China
 
-* Corresponding author: Dengke Wu, Department of Emergency Medicine, and Emergency Medicine and Difficult Diseases Institute, The Second Xiangya Hospital of Central South University, Changsha 410011, Hunan, China. Electronic address: wudk2010@csu.edu.cn
+† First author: Yuzhong Cai, MD, Email: caiyuzhong@csu.edu.cn
+
+* Corresponding author: Dengke Wu, MD, PhD, Department of Emergency Medicine, Second Xiangya Hospital, Central South University, 139 Renmin Middle Road, Changsha 410011, Hunan, China. Email: wudk2010@csu.edu.cn
 
 ---
 
@@ -262,7 +264,7 @@ DSI is an independent predictor of in-hospital mortality in acute abdomen after 
 
 **Conflicts**: Authors declare no conflicts.
 
-**CRediT**: Jiqiang Liu: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Software, Validation, Visualization, Writing – original draft. Dengke Wu: Conceptualization, Funding acquisition, Methodology, Project administration, Resources, Supervision, Writing – review & editing.
+**CRediT**: Yuzhong Cai: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Software, Validation, Visualization, Writing – original draft. Jiqiang Liu: Data curation, Investigation, Validation, Writing – review & editing. Dengke Wu: Conceptualization, Funding acquisition, Methodology, Project administration, Resources, Supervision, Writing – review & editing.
 
 **AI use declaration**: During the preparation of this manuscript, the authors used a large language model for language polishing and manuscript editing only. All data extraction, statistical analyses, figure generation, and scientific interpretation were performed independently by the authors. After using the tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 
