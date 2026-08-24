@@ -323,10 +323,10 @@ DSI is an independent predictor of in-hospital mortality in acute abdomen after 
 
 40. VanderWeele TJ, Ding P. Sensitivity analysis in observational research: introducing the E-value. Ann Intern Med. 2017;167(4):268-274. https://doi.org/10.7326/M16-2607
 
-41. Jung YT, Jeon J, Park JY, et al. Addition of lactic acid levels improves the accuracy of quick sequential organ failure assessment in predicting mortality in surgical patients with complicated intra-abdominal infections: a retrospective study. World J Emerg Surg. 2018;13:14. https://doi.org/10.1186/s13017-018-0177-9
+41. Jung YT, Jeon J, Park JY, et al. Addition of lactic acid levels improves the accuracy of quick sequential organ failure assessment in predicting mortality in surgical patients with complicated intra-abdominal infections: a retrospective study. World J Emerg Surg. 2018;13:14. https://doi.org/10.1186/s13017-018-0173-6
 
-42. Sartelli M, Abu-Zidan FM, Labricciosa FM, et al. Physiological parameters for Prognosis in Abdominal Sepsis (PIPAS) Study: a WSES observational study. World J Emerg Surg. 2019;14:34. https://doi.org/10.1186/s13017-019-0235-z
+42. Sartelli M, Abu-Zidan FM, Labricciosa FM, et al. Physiological parameters for Prognosis in Abdominal Sepsis (PIPAS) Study: a WSES observational study. World J Emerg Surg. 2019;14:34. https://doi.org/10.1186/s13017-019-0253-2
 
-43. Koch C, Edinger F, Fischer T, et al. Comparison of qSOFA score, SOFA score, and SIRS criteria for the prediction of infection and mortality among surgical intermediate and intensive care unit patients. World J Emerg Surg. 2020;15:63. https://doi.org/10.1186/s13017-020-00320-5
+43. Koch C, Edinger F, Fischer T, et al. Comparison of qSOFA score, SOFA score, and SIRS criteria for the prediction of infection and mortality among surgical intermediate and intensive care unit patients. World J Emerg Surg. 2020;15:63. https://doi.org/10.1186/s13017-020-00343-y
 
-44. Park DJ, Baik SM, Hong KS, et al. Development and external validation of an artificial intelligence model for predicting mortality and prolonged intensive care unit stay in postoperative critically ill patients: a retrospective study. World J Emerg Surg. 2025;20:79. https://doi.org/10.1186/s13017-025-00650-6
+44. Park DJ, Baik SM, Hong KS, et al. Development and external validation of an artificial intelligence model for predicting mortality and prolonged intensive care unit stay in postoperative critically ill patients: a retrospective study. World J Emerg Surg. 2025;20:79. https://doi.org/10.1186/s13017-025-00650-2
